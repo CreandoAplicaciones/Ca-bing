@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsBingoBinding
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseFragment
-
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list.CardsListAdapter
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards.CardsBingoViewModel.Event.*
 
 
 class CardsBingoFragment : BaseFragment() {
@@ -30,7 +31,9 @@ class CardsBingoFragment : BaseFragment() {
 
     private fun updateUi(model: CardsBingoViewModel.Event) {
         when (model) {
-            else -> {}
+            is ShowCards ->{
+                binding.rVCards.adapter = CardsAdapter (model.numberCards)
+            }
         }
 
     }

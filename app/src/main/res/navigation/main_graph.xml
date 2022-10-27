@@ -5,6 +5,15 @@
     android:id="@+id/main_graph"
     app:startDestination="@id/cardsBingoFragment">
     <fragment
+        android:id="@+id/cardsListFragment"
+        android:name="com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list.CardsListFragment"
+        android:label="CardsListFragment"
+        tools:layout="@layout/fragment_cards_list">
+        <action
+            android:id="@+id/action_cardsListFragment_to_cardsBingoFragment"
+            app:destination="@id/cardsBingoFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/cardsBingoFragment"
         android:name="com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards.CardsBingoFragment"
         android:label="CardsBingoFragment"

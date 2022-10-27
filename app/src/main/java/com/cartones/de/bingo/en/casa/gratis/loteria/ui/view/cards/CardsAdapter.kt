@@ -1,7 +1,8 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list
+package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.cartones.de.bingo.en.casa.gratis.loteria.R
@@ -9,7 +10,7 @@ import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.ItemCardBinding
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
 
 
-class CardsListAdapter(private val listener: (NumberCard) -> Unit, private val numberCards: List<NumberCard>) : RecyclerView.Adapter<CardsListAdapter.NumberCardViewHolder>() {
+class CardsAdapter(private val numberCards: List<NumberCard>) : RecyclerView.Adapter<CardsAdapter.NumberCardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = NumberCardViewHolder(ItemCardBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
@@ -18,11 +19,11 @@ class CardsListAdapter(private val listener: (NumberCard) -> Unit, private val n
     }
 
     override fun onBindViewHolder(holder: NumberCardViewHolder, position: Int) {
-        holder.bind(numberCards[position], listener)
+        holder.bind(numberCards[position])
     }
 
     class NumberCardViewHolder(private val binding: ItemCardBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(numberCard: NumberCard, listener: (NumberCard) -> Unit) = with(binding) {
+        fun bind(numberCard: NumberCard) = with(binding) {
 
            imageA1.setImageDrawable(ContextCompat.getDrawable(imageA1.context, numberCard.number1))
            imageA2.setImageDrawable(ContextCompat.getDrawable(imageA2.context, numberCard.number2))
@@ -52,8 +53,35 @@ class CardsListAdapter(private val listener: (NumberCard) -> Unit, private val n
            imageC8.setImageDrawable(ContextCompat.getDrawable(imageC8.context, numberCard.number26))
            imageC9.setImageDrawable(ContextCompat.getDrawable(imageC9.context, numberCard.number27))
 
+            imageA1.setOnClickListener{ imageA1.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageA2.setOnClickListener{ imageA2.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageA3.setOnClickListener{ imageA3.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageA4.setOnClickListener{ imageA4.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageA5.setOnClickListener{ imageA5.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageA6.setOnClickListener{ imageA6.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageA7.setOnClickListener{ imageA7.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageA8.setOnClickListener{ imageA8.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageA9.setOnClickListener{ imageA9.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB1.setOnClickListener{ imageB1.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB2.setOnClickListener{ imageB2.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB3.setOnClickListener{ imageB3.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB4.setOnClickListener{ imageB4.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB5.setOnClickListener{ imageB5.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB6.setOnClickListener{ imageB6.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB7.setOnClickListener{ imageB7.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB8.setOnClickListener{ imageB8.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageB9.setOnClickListener{ imageB9.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC1.setOnClickListener{ imageC1.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC2.setOnClickListener{ imageC2.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC3.setOnClickListener{ imageC3.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC4.setOnClickListener{ imageC4.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC5.setOnClickListener{ imageC5.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC6.setOnClickListener{ imageC6.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC7.setOnClickListener{ imageC7.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC8.setOnClickListener{ imageC8.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
+            imageC9.setOnClickListener{ imageC9.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
 
-            layout.setOnClickListener{listener(numberCard)}
+
         }
     }
 }

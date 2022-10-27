@@ -41,7 +41,7 @@ class MainActivity : BaseActivity() {
 
     private fun updateUi(model: MainViewModel.Event) {
         when (model) {
-            SetUp -> {
+            is SetUp -> {
                 MobileAds.initialize(this) {}
                 binding.adViewSup.loadAd(adRequest)
                 binding.adViewInf.loadAd(adRequest)

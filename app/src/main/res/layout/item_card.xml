@@ -1,398 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/outside_line"
+    android:id="@+id/layout"
     android:padding="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/small_outside_line"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textA1"
+        <ImageView
+            android:id="@+id/imageA1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageA2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/textA2"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textA2"
+        <ImageView
+            android:id="@+id/imageA2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/textA1"
-            app:layout_constraintEnd_toStartOf="@id/textA3"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageA3"
+            app:layout_constraintStart_toEndOf="@id/imageA1"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textA3"
+        <ImageView
+            android:id="@+id/imageA3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/textA2"
-            app:layout_constraintEnd_toStartOf="@id/textA4"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageA4"
+            app:layout_constraintStart_toEndOf="@id/imageA2"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textA4"
+        <ImageView
+            android:id="@+id/imageA4"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/textA3"
-            app:layout_constraintEnd_toStartOf="@id/textA5"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageA5"
+            app:layout_constraintStart_toEndOf="@id/imageA3"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textA5"
+        <ImageView
+            android:id="@+id/imageA5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/textA4"
-            app:layout_constraintEnd_toStartOf="@id/textA6"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageA6"
+            app:layout_constraintStart_toEndOf="@id/imageA4"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textA6"
+        <ImageView
+            android:id="@+id/imageA6"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/textA5"
-            app:layout_constraintEnd_toStartOf="@id/textA7"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageA7"
+            app:layout_constraintStart_toEndOf="@id/imageA5"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textA7"
+        <ImageView
+            android:id="@+id/imageA7"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/textA6"
-            app:layout_constraintEnd_toStartOf="@id/textA8"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageA8"
+            app:layout_constraintStart_toEndOf="@id/imageA6"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textA8"
+        <ImageView
+            android:id="@+id/imageA8"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/textA7"
-            app:layout_constraintEnd_toStartOf="@id/textA9"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageA9"
+            app:layout_constraintStart_toEndOf="@id/imageA7"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textA9"
+        <ImageView
+            android:id="@+id/imageA9"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/textA8"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageA8"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textB1"
+        <ImageView
+            android:id="@+id/imageB1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textA1"
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageB2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/textB2"/>
+            app:layout_constraintTop_toBottomOf="@id/imageA1" />
 
-        <TextView
-            android:id="@+id/textB2"
+        <ImageView
+            android:id="@+id/imageB2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textA2"
-            app:layout_constraintStart_toEndOf="@id/textB1"
-            app:layout_constraintEnd_toStartOf="@id/textB3"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageB3"
+            app:layout_constraintStart_toEndOf="@id/imageB1"
+            app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <TextView
-            android:id="@+id/textB3"
+        <ImageView
+            android:id="@+id/imageB3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textA2"
-            app:layout_constraintStart_toEndOf="@id/textB2"
-            app:layout_constraintEnd_toStartOf="@id/textB4"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageB4"
+            app:layout_constraintStart_toEndOf="@id/imageB2"
+            app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <TextView
-            android:id="@+id/textB4"
+        <ImageView
+            android:id="@+id/imageB4"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textA2"
-            app:layout_constraintStart_toEndOf="@id/textB3"
-            app:layout_constraintEnd_toStartOf="@id/textB5"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageB5"
+            app:layout_constraintStart_toEndOf="@id/imageB3"
+            app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <TextView
-            android:id="@+id/textB5"
+        <ImageView
+            android:id="@+id/imageB5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textA2"
-            app:layout_constraintStart_toEndOf="@id/textB4"
-            app:layout_constraintEnd_toStartOf="@id/textB6"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageB6"
+            app:layout_constraintStart_toEndOf="@id/imageB4"
+            app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <TextView
-            android:id="@+id/textB6"
+        <ImageView
+            android:id="@+id/imageB6"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textA2"
-            app:layout_constraintStart_toEndOf="@id/textB5"
-            app:layout_constraintEnd_toStartOf="@id/textB7"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageB7"
+            app:layout_constraintStart_toEndOf="@id/imageB5"
+            app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <TextView
-            android:id="@+id/textB7"
+        <ImageView
+            android:id="@+id/imageB7"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textA2"
-            app:layout_constraintStart_toEndOf="@id/textB6"
-            app:layout_constraintEnd_toStartOf="@id/textB8"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageB8"
+            app:layout_constraintStart_toEndOf="@id/imageB6"
+            app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <TextView
-            android:id="@+id/textB8"
+        <ImageView
+            android:id="@+id/imageB8"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textA2"
-            app:layout_constraintStart_toEndOf="@id/textB7"
-            app:layout_constraintEnd_toStartOf="@id/textB9"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageB9"
+            app:layout_constraintStart_toEndOf="@id/imageB7"
+            app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <TextView
-            android:id="@+id/textB9"
+        <ImageView
+            android:id="@+id/imageB9"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:textColor="@color/blue_number"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            app:layout_constraintTop_toBottomOf="@id/textA2"
-            app:layout_constraintStart_toEndOf="@id/textB8"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageB8"
+            app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <TextView
-            android:id="@+id/textC1"
+        <ImageView
+            android:id="@+id/imageC1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:textColor="@color/blue_number"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            app:layout_constraintTop_toBottomOf="@id/textB1"
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageC2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/textC2"/>
+            app:layout_constraintTop_toBottomOf="@id/imageB1" />
 
-        <TextView
-            android:id="@+id/textC2"
+        <ImageView
+            android:id="@+id/imageC2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textB2"
-            app:layout_constraintStart_toEndOf="@id/textC1"
-            app:layout_constraintEnd_toStartOf="@id/textC3"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageC3"
+            app:layout_constraintStart_toEndOf="@id/imageC1"
+            app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <TextView
-            android:id="@+id/textC3"
+        <ImageView
+            android:id="@+id/imageC3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textB2"
-            app:layout_constraintStart_toEndOf="@id/textC2"
-            app:layout_constraintEnd_toStartOf="@id/textC4"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageC4"
+            app:layout_constraintStart_toEndOf="@id/imageC2"
+            app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <TextView
-            android:id="@+id/textC4"
+        <ImageView
+            android:id="@+id/imageC4"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:textColor="@color/blue_number"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            app:layout_constraintTop_toBottomOf="@id/textB2"
-            app:layout_constraintStart_toEndOf="@id/textC3"
-            app:layout_constraintEnd_toStartOf="@id/textC5"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageC5"
+            app:layout_constraintStart_toEndOf="@id/imageC3"
+            app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <TextView
-            android:id="@+id/textC5"
+        <ImageView
+            android:id="@+id/imageC5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:textColor="@color/blue_number"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            app:layout_constraintTop_toBottomOf="@id/textB2"
-            app:layout_constraintStart_toEndOf="@id/textC4"
-            app:layout_constraintEnd_toStartOf="@id/textC6"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageC6"
+            app:layout_constraintStart_toEndOf="@id/imageC4"
+            app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <TextView
-            android:id="@+id/textC6"
+        <ImageView
+            android:id="@+id/imageC6"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:textColor="@color/blue_number"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            app:layout_constraintTop_toBottomOf="@id/textB2"
-            app:layout_constraintStart_toEndOf="@id/textC5"
-            app:layout_constraintEnd_toStartOf="@id/textC7"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageC7"
+            app:layout_constraintStart_toEndOf="@id/imageC5"
+            app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <TextView
-            android:id="@+id/textC7"
+        <ImageView
+            android:id="@+id/imageC7"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:textColor="@color/blue_number"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            app:layout_constraintTop_toBottomOf="@id/textB2"
-            app:layout_constraintStart_toEndOf="@id/textC6"
-            app:layout_constraintEnd_toStartOf="@id/textC8"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageC8"
+            app:layout_constraintStart_toEndOf="@id/imageC6"
+            app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <TextView
-            android:id="@+id/textC8"
+        <ImageView
+            android:id="@+id/imageC8"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:textColor="@color/blue_number"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            app:layout_constraintTop_toBottomOf="@id/textB2"
-            app:layout_constraintStart_toEndOf="@id/textC7"
-            app:layout_constraintEnd_toStartOf="@id/textC9"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/imageC9"
+            app:layout_constraintStart_toEndOf="@id/imageC7"
+            app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <TextView
-            android:id="@+id/textC9"
+        <ImageView
+            android:id="@+id/imageC9"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="1"
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:layout_height="0dp"
             android:background="@drawable/small_outside_line"
-            android:textColor="@color/blue_number"
-            app:layout_constraintTop_toBottomOf="@id/textB2"
-            app:layout_constraintStart_toEndOf="@id/textC8"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:gravity="center"
+            android:src="@drawable/a90"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageC8"
+            app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

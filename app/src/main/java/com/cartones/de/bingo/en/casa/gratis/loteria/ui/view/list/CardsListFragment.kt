@@ -1,23 +1,23 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards
+package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsBingoBinding
+import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsListBinding
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseFragment
-
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list.CardsListViewModel.Event.*
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
 
 
-class CardsBingoFragment : BaseFragment() {
+class CardsListFragment : BaseFragment() {
 
-    private val viewModel: CardsBingoViewModel by viewModels()
-    private lateinit var binding: FragmentCardsBingoBinding
+    private val viewModel: CardsListViewModel by viewModels()
+    private lateinit var binding: FragmentCardsListBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = FragmentCardsBingoBinding.inflate(inflater)
+        binding = FragmentCardsListBinding.inflate(inflater)
         return binding.root
     }
 
@@ -28,10 +28,16 @@ class CardsBingoFragment : BaseFragment() {
         viewModel.eventsFlow.observe(viewLifecycleOwner, ::updateUi)
     }
 
-    private fun updateUi(model: CardsBingoViewModel.Event) {
+    private fun updateUi(model: CardsListViewModel.Event) {
         when (model) {
-            else -> {}
+            is ShowCards ->{
+                binding.rVCards.adapter = CardsListAdapter (
+                    { numberCard -> viewModel.onExerciseClicked(numberCard)},
+                    model.numberCards)
+            }
+            is GoToCardsBingo -> TODO()
         }
+
 
     }
 }
