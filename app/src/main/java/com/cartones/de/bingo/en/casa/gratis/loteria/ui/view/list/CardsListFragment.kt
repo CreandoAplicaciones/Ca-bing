@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsListBinding
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseFragment
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list.CardsListViewModel.Event.*
@@ -24,7 +26,7 @@ class CardsListFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         super.init(viewModel)
-        viewModel.initFlow()
+        viewModel.initFlow(requireActivity())
         viewModel.eventsFlow.observe(viewLifecycleOwner, ::updateUi)
     }
 
@@ -35,7 +37,7 @@ class CardsListFragment : BaseFragment() {
                     { numberCard -> viewModel.onExerciseClicked(numberCard)},
                     model.numberCards)
             }
-            is GoToCardsBingo -> TODO()
+            is GoToCardsBingo -> findNavController().navigate(R.id.cardsBingoFragment)
         }
 
 

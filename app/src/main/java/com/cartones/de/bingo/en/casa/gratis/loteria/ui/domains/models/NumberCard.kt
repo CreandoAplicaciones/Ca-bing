@@ -1,5 +1,8 @@
 package com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class NumberCard (
     val number1: Int,
     val number2: Int,
@@ -28,4 +31,4 @@ data class NumberCard (
   val number25: Int,
   val number26: Int,
   val number27: Int
-    )
+    ) : Parcelable

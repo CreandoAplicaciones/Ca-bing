@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/cardsBingoFragment">
+    app:startDestination="@id/cardsListFragment">
     <fragment
         android:id="@+id/cardsListFragment"
         android:name="com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list.CardsListFragment"
@@ -12,10 +12,11 @@
         <action
             android:id="@+id/action_cardsListFragment_to_cardsBingoFragment"
             app:destination="@id/cardsBingoFragment" />
-    </fragment>
+        </fragment>
     <fragment
         android:id="@+id/cardsBingoFragment"
         android:name="com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards.CardsBingoFragment"
         android:label="CardsBingoFragment"
-        tools:layout="@layout/fragment_cards_bingo"/>
+        tools:layout="@layout/fragment_cards_bingo">
+   </fragment>
 </navigation>

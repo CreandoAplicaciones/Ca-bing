@@ -1,7 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
+
+
 
 android {
     compileSdk 32
@@ -57,5 +60,9 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     //admobe
     implementation 'com.google.android.gms:play-services-ads:21.2.0'
+    //json
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+
 
 }

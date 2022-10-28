@@ -1,5 +1,6 @@
 package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -7,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.ItemCardBinding
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.Utils
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
 
 
@@ -53,35 +55,114 @@ class CardsAdapter(private val numberCards: List<NumberCard>) : RecyclerView.Ada
            imageC8.setImageDrawable(ContextCompat.getDrawable(imageC8.context, numberCard.number26))
            imageC9.setImageDrawable(ContextCompat.getDrawable(imageC9.context, numberCard.number27))
 
-            imageA1.setOnClickListener{ imageA1.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageA2.setOnClickListener{ imageA2.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageA3.setOnClickListener{ imageA3.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageA4.setOnClickListener{ imageA4.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageA5.setOnClickListener{ imageA5.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageA6.setOnClickListener{ imageA6.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageA7.setOnClickListener{ imageA7.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageA8.setOnClickListener{ imageA8.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageA9.setOnClickListener{ imageA9.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB1.setOnClickListener{ imageB1.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB2.setOnClickListener{ imageB2.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB3.setOnClickListener{ imageB3.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB4.setOnClickListener{ imageB4.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB5.setOnClickListener{ imageB5.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB6.setOnClickListener{ imageB6.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB7.setOnClickListener{ imageB7.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB8.setOnClickListener{ imageB8.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageB9.setOnClickListener{ imageB9.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC1.setOnClickListener{ imageC1.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC2.setOnClickListener{ imageC2.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC3.setOnClickListener{ imageC3.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC4.setOnClickListener{ imageC4.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC5.setOnClickListener{ imageC5.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC6.setOnClickListener{ imageC6.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC7.setOnClickListener{ imageC7.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC8.setOnClickListener{ imageC8.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-            imageC9.setOnClickListener{ imageC9.background = imageA1.context.resources.getDrawable(R.drawable.selected) }
-
-
+            var number1 = false
+            imageA1.setOnClickListener{
+                number1 = Utils.didClickNumberCards(number1, imageA1)
+            }
+            var number2 = false
+            imageA2.setOnClickListener{
+                number2 = Utils.didClickNumberCards(number2, imageA2)
+            }
+            var number3 = false
+            imageA3.setOnClickListener{
+                number3 = Utils.didClickNumberCards(number3, imageA3)
+            }
+            var number4 = false
+            imageA4.setOnClickListener{
+                number4 = Utils.didClickNumberCards(number4, imageA4)
+            }
+            var number5 = false
+            imageA5.setOnClickListener{
+                number5 = Utils.didClickNumberCards(number5, imageA5)
+            }
+            var number6 = false
+            imageA6.setOnClickListener{
+                number6 = Utils.didClickNumberCards(number6, imageA6)
+            }
+            var number7 = false
+            imageA7.setOnClickListener{
+                number7 = Utils.didClickNumberCards(number7, imageA7)
+            }
+            var number8 = false
+            imageA8.setOnClickListener{
+                number8 = Utils.didClickNumberCards(number8, imageA8)
+            }
+            var number9 = false
+            imageA9.setOnClickListener{
+                number9 = Utils.didClickNumberCards(number9, imageA9)
+            }
+            var number10 = false
+            imageB1.setOnClickListener{
+                number10 = Utils.didClickNumberCards(number10, imageB1)
+            }
+            var number11 = false
+            imageB2.setOnClickListener{
+                number11 = Utils.didClickNumberCards(number11, imageB2)
+            }
+            var number12 = false
+            imageB3.setOnClickListener{
+                number12 = Utils.didClickNumberCards(number12, imageB3)
+            }
+            var number13 = false
+            imageB4.setOnClickListener{
+                number13 = Utils.didClickNumberCards(number13, imageB4)
+            }
+            var number14 = false
+            imageB5.setOnClickListener{
+                number14 = Utils.didClickNumberCards(number14, imageB5)
+            }
+            var number15 = false
+            imageB6.setOnClickListener{
+                number15 = Utils.didClickNumberCards(number15, imageB6)
+            }
+            var number16 = false
+            imageB7.setOnClickListener{
+                number16 = Utils.didClickNumberCards(number16, imageB7)
+            }
+            var number17 = false
+            imageB8.setOnClickListener{
+                number17 = Utils.didClickNumberCards(number17, imageB8)
+            }
+            var number18 = false
+            imageB9.setOnClickListener{
+                number18 = Utils.didClickNumberCards(number18, imageB9)
+            }
+            var number19 = false
+            imageC1.setOnClickListener{
+                number19 = Utils.didClickNumberCards(number19, imageC1)
+            }
+            var number20 = false
+            imageC2.setOnClickListener{
+                number20 = Utils.didClickNumberCards(number20, imageC2)
+            }
+            var number21 = false
+            imageC3.setOnClickListener{
+                number21 = Utils.didClickNumberCards(number21, imageC3)
+            }
+            var number22 = false
+            imageC4.setOnClickListener{
+                number22 = Utils.didClickNumberCards(number22, imageC4)
+            }
+            var number23 = false
+            imageC5.setOnClickListener{
+                number23 = Utils.didClickNumberCards(number23, imageC5)
+            }
+            var number24 = false
+            imageC6.setOnClickListener{
+                number24 = Utils.didClickNumberCards(number24, imageC6)
+            }
+            var number25 = false
+            imageC7.setOnClickListener{
+                number25 = Utils.didClickNumberCards(number25, imageC7)
+            }
+            var number26 = false
+            imageC8.setOnClickListener{
+                number26 = Utils.didClickNumberCards(number26, imageC8)
+            }
+            var number27 = false
+            imageC9.setOnClickListener{
+                number27 = Utils.didClickNumberCards(number27, imageC9)
+            }
         }
     }
 }

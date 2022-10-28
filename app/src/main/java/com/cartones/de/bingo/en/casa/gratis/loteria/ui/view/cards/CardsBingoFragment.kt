@@ -17,6 +17,7 @@ class CardsBingoFragment : BaseFragment() {
     private val viewModel: CardsBingoViewModel by viewModels()
     private lateinit var binding: FragmentCardsBingoBinding
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentCardsBingoBinding.inflate(inflater)
         return binding.root
@@ -25,10 +26,9 @@ class CardsBingoFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         super.init(viewModel)
-        viewModel.initFlow()
+        viewModel.initFlow(requireActivity())
         viewModel.eventsFlow.observe(viewLifecycleOwner, ::updateUi)
     }
-
     private fun updateUi(model: CardsBingoViewModel.Event) {
         when (model) {
             is ShowCards ->{

@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/outside_line"
     android:id="@+id/layout"
+    android:layout_marginVertical="10dp"
     android:padding="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +24,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageA2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +36,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageA3"
             app:layout_constraintStart_toEndOf="@id/imageA1"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +48,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageA4"
             app:layout_constraintStart_toEndOf="@id/imageA2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +60,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageA5"
             app:layout_constraintStart_toEndOf="@id/imageA3"
             app:layout_constraintTop_toTopOf="parent" />
@@ -71,7 +72,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageA6"
             app:layout_constraintStart_toEndOf="@id/imageA4"
             app:layout_constraintTop_toTopOf="parent" />
@@ -83,7 +84,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageA7"
             app:layout_constraintStart_toEndOf="@id/imageA5"
             app:layout_constraintTop_toTopOf="parent" />
@@ -95,7 +96,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageA8"
             app:layout_constraintStart_toEndOf="@id/imageA6"
             app:layout_constraintTop_toTopOf="parent" />
@@ -107,7 +108,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageA9"
             app:layout_constraintStart_toEndOf="@id/imageA7"
             app:layout_constraintTop_toTopOf="parent" />
@@ -119,7 +120,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imageA8"
             app:layout_constraintTop_toTopOf="parent" />
@@ -131,7 +132,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageB2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageA1" />
@@ -143,7 +144,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageB3"
             app:layout_constraintStart_toEndOf="@id/imageB1"
             app:layout_constraintTop_toBottomOf="@id/imageA2" />
@@ -155,7 +156,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageB4"
             app:layout_constraintStart_toEndOf="@id/imageB2"
             app:layout_constraintTop_toBottomOf="@id/imageA2" />
@@ -167,7 +168,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageB5"
             app:layout_constraintStart_toEndOf="@id/imageB3"
             app:layout_constraintTop_toBottomOf="@id/imageA2" />
@@ -179,7 +180,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageB6"
             app:layout_constraintStart_toEndOf="@id/imageB4"
             app:layout_constraintTop_toBottomOf="@id/imageA2" />
@@ -191,7 +192,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageB7"
             app:layout_constraintStart_toEndOf="@id/imageB5"
             app:layout_constraintTop_toBottomOf="@id/imageA2" />
@@ -203,7 +204,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageB8"
             app:layout_constraintStart_toEndOf="@id/imageB6"
             app:layout_constraintTop_toBottomOf="@id/imageA2" />
@@ -215,7 +216,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageB9"
             app:layout_constraintStart_toEndOf="@id/imageB7"
             app:layout_constraintTop_toBottomOf="@id/imageA2" />
@@ -227,7 +228,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imageB8"
             app:layout_constraintTop_toBottomOf="@id/imageA2" />
@@ -239,7 +240,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageC2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageB1" />
@@ -251,7 +252,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageC3"
             app:layout_constraintStart_toEndOf="@id/imageC1"
             app:layout_constraintTop_toBottomOf="@id/imageB2" />
@@ -263,7 +264,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageC4"
             app:layout_constraintStart_toEndOf="@id/imageC2"
             app:layout_constraintTop_toBottomOf="@id/imageB2" />
@@ -275,7 +276,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageC5"
             app:layout_constraintStart_toEndOf="@id/imageC3"
             app:layout_constraintTop_toBottomOf="@id/imageB2" />
@@ -287,7 +288,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageC6"
             app:layout_constraintStart_toEndOf="@id/imageC4"
             app:layout_constraintTop_toBottomOf="@id/imageB2" />
@@ -299,7 +300,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageC7"
             app:layout_constraintStart_toEndOf="@id/imageC5"
             app:layout_constraintTop_toBottomOf="@id/imageB2" />
@@ -311,7 +312,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageC8"
             app:layout_constraintStart_toEndOf="@id/imageC6"
             app:layout_constraintTop_toBottomOf="@id/imageB2" />
@@ -323,7 +324,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toStartOf="@id/imageC9"
             app:layout_constraintStart_toEndOf="@id/imageC7"
             app:layout_constraintTop_toBottomOf="@id/imageB2" />
@@ -335,7 +336,7 @@
             android:background="@drawable/small_outside_line"
             android:gravity="center"
             android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintDimensionRatio="6:7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imageC8"
             app:layout_constraintTop_toBottomOf="@id/imageB2" />

@@ -1,0 +1,688 @@
+From 4e1331d7e54ef492b43b0845d32a6d65b1cb132b Mon Sep 17 00:00:00 2001
+From: "DESKTOP-U9CG8QT\\pedro" <pedroperezaragon@gmail.com>
+Date: Thu, 27 Oct 2022 21:22:33 +0200
+Subject: [PATCH] I add the numbers, and the lists of the fragments
+
+---
+ .../loteria/ui/domains/models/NumberCard.kt   |   4 +
+ .../loteria/ui/view/cards/CardsAdapter.kt     |  59 +++
+ .../loteria/ui/view/list/CardsListAdapter.kt  |  38 ++
+ .../loteria/ui/view/list/CardsListFragment.kt |  37 ++
+ .../ui/view/list/CardsListViewModel.kt        |  32 ++
+ app/src/main/res/drawable-v24/a0.xml          |  10 +
+ app/src/main/res/drawable/selected.xml        |  10 +
+ .../main/res/layout/fragment_cards_list.xml   |   7 +
+ app/src/main/res/layout/item_card.xml         | 399 ++++++++++++++++++
+ 9 files changed, 596 insertions(+)
+ create mode 100644 app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/domains/models/NumberCard.kt
+ create mode 100644 app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/cards/CardsAdapter.kt
+ create mode 100644 app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListAdapter.kt
+ create mode 100644 app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListFragment.kt
+ create mode 100644 app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListViewModel.kt
+ create mode 100644 app/src/main/res/drawable-v24/a0.xml
+ create mode 100644 app/src/main/res/drawable/selected.xml
+ create mode 100644 app/src/main/res/layout/fragment_cards_list.xml
+ create mode 100644 app/src/main/res/layout/item_card.xml
+
+diff --git a/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/domains/models/NumberCard.kt b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/domains/models/NumberCard.kt
+new file mode 100644
+index 0000000..43e4348
+--- /dev/null
++++ b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/domains/models/NumberCard.kt
+@@ -0,0 +1,4 @@
++package com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models
++
++class numberCard {
++}
+\ No newline at end of file
+diff --git a/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/cards/CardsAdapter.kt b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/cards/CardsAdapter.kt
+new file mode 100644
+index 0000000..71ec868
+--- /dev/null
++++ b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/cards/CardsAdapter.kt
+@@ -0,0 +1,59 @@
++package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list
++
++import android.view.LayoutInflater
++import android.view.ViewGroup
++import androidx.core.content.ContextCompat
++import androidx.recyclerview.widget.RecyclerView
++import com.cartones.de.bingo.en.casa.gratis.loteria.R
++import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.ItemCardBinding
++import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
++
++
++class CardsListAdapter(private val listener: (NumberCard) -> Unit, private val numberCards: List<NumberCard>) : RecyclerView.Adapter<CardsListAdapter.NumberCardViewHolder>() {
++
++    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = NumberCardViewHolder(ItemCardBinding.inflate(LayoutInflater.from(parent.context), parent, false))
++
++    override fun getItemCount(): Int {
++        return numberCards.size
++    }
++
++    override fun onBindViewHolder(holder: NumberCardViewHolder, position: Int) {
++        holder.bind(numberCards[position], listener)
++    }
++
++    class NumberCardViewHolder(private val binding: ItemCardBinding) : RecyclerView.ViewHolder(binding.root) {
++        fun bind(numberCard: NumberCard, listener: (NumberCard) -> Unit) = with(binding) {
++
++           imageA1.setImageDrawable(ContextCompat.getDrawable(imageA1.context, numberCard.number1))
++           imageA2.setImageDrawable(ContextCompat.getDrawable(imageA2.context, numberCard.number2))
++           imageA3.setImageDrawable(ContextCompat.getDrawable(imageA3.context, numberCard.number3))
++           imageA4.setImageDrawable(ContextCompat.getDrawable(imageA4.context, numberCard.number4))
++           imageA5.setImageDrawable(ContextCompat.getDrawable(imageA5.context, numberCard.number5))
++           imageA6.setImageDrawable(ContextCompat.getDrawable(imageA6.context, numberCard.number6))
++           imageA7.setImageDrawable(ContextCompat.getDrawable(imageA7.context, numberCard.number7))
++           imageA8.setImageDrawable(ContextCompat.getDrawable(imageA8.context, numberCard.number8))
++           imageA9.setImageDrawable(ContextCompat.getDrawable(imageA9.context, numberCard.number9))
++           imageB1.setImageDrawable(ContextCompat.getDrawable(imageB1.context, numberCard.number10))
++           imageB2.setImageDrawable(ContextCompat.getDrawable(imageB2.context, numberCard.number11))
++           imageB3.setImageDrawable(ContextCompat.getDrawable(imageB3.context, numberCard.number12))
++           imageB4.setImageDrawable(ContextCompat.getDrawable(imageB4.context, numberCard.number13))
++           imageB5.setImageDrawable(ContextCompat.getDrawable(imageB5.context, numberCard.number14))
++           imageB6.setImageDrawable(ContextCompat.getDrawable(imageB6.context, numberCard.number15))
++           imageB7.setImageDrawable(ContextCompat.getDrawable(imageB7.context, numberCard.number16))
++           imageB8.setImageDrawable(ContextCompat.getDrawable(imageB8.context, numberCard.number17))
++           imageB9.setImageDrawable(ContextCompat.getDrawable(imageB9.context, numberCard.number18))
++           imageC1.setImageDrawable(ContextCompat.getDrawable(imageC1.context, numberCard.number19))
++           imageC2.setImageDrawable(ContextCompat.getDrawable(imageC2.context, numberCard.number20))
++           imageC3.setImageDrawable(ContextCompat.getDrawable(imageC3.context, numberCard.number21))
++           imageC4.setImageDrawable(ContextCompat.getDrawable(imageC4.context, numberCard.number22))
++           imageC5.setImageDrawable(ContextCompat.getDrawable(imageC5.context, numberCard.number23))
++           imageC6.setImageDrawable(ContextCompat.getDrawable(imageC6.context, numberCard.number24))
++           imageC7.setImageDrawable(ContextCompat.getDrawable(imageC7.context, numberCard.number25))
++           imageC8.setImageDrawable(ContextCompat.getDrawable(imageC8.context, numberCard.number26))
++           imageC9.setImageDrawable(ContextCompat.getDrawable(imageC9.context, numberCard.number27))
++
++
++            layout.setOnClickListener{listener(numberCard)}
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListAdapter.kt b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListAdapter.kt
+new file mode 100644
+index 0000000..1c23215
+--- /dev/null
++++ b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListAdapter.kt
+@@ -0,0 +1,38 @@
++package es.sixtema.handygym.ui.workouts.workoutContent.exercisesSearch
++
++import android.view.LayoutInflater
++import android.view.ViewGroup
++import androidx.recyclerview.widget.RecyclerView
++import es.sixtema.handygym.common.extensions.loadVideoImage
++import es.sixtema.handygym.databinding.RowExerciseBinding
++import es.sixtema.handygym.domain.models.Exercise
++import es.sixtema.handygym.domain.models.Language
++
++
++class ExercisesSearchAdapter(private val listener: (Exercise) -> Unit, private val exercises: List<Exercise>, private val language: String) : RecyclerView.Adapter<ExercisesSearchAdapter.ExercisesViewHolder>() {
++
++    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ExercisesViewHolder(RowExerciseBinding.inflate(LayoutInflater.from(parent.context), parent, false))
++
++    override fun getItemCount(): Int {
++        return exercises.size
++    }
++
++    override fun onBindViewHolder(holder: ExercisesViewHolder, position: Int) {
++        holder.bind(exercises[position], language, listener)
++    }
++
++    class ExercisesViewHolder(val binding: RowExerciseBinding) : RecyclerView.ViewHolder(binding.root) {
++        fun bind(exercise: Exercise, language: String, listener: (Exercise) -> Unit) = with(binding) {
++            if (language == Language.Spanish) {
++                name.text = exercise.nameEs
++                description.text = exercise.descriptionEs
++            } else {
++                name.text = exercise.nameEn
++                description.text = exercise.descriptionEn
++            }
++            image.loadVideoImage(exercise.video)
++
++            layout.setOnClickListener{listener(exercise)}
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListFragment.kt b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListFragment.kt
+new file mode 100644
+index 0000000..91c3221
+--- /dev/null
++++ b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListFragment.kt
+@@ -0,0 +1,37 @@
++package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards
++
++import android.os.Bundle
++import android.view.LayoutInflater
++import android.view.View
++import android.view.ViewGroup
++import androidx.fragment.app.viewModels
++import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsBingoBinding
++import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseFragment
++
++import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
++
++
++class CardsBingoFragment : BaseFragment() {
++
++    private val viewModel: CardsBingoViewModel by viewModels()
++    private lateinit var binding: FragmentCardsBingoBinding
++
++    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
++        binding = FragmentCardsBingoBinding.inflate(inflater)
++        return binding.root
++    }
++
++    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(view, savedInstanceState)
++        super.init(viewModel)
++        viewModel.initFlow()
++        viewModel.eventsFlow.observe(viewLifecycleOwner, ::updateUi)
++    }
++
++    private fun updateUi(model: CardsBingoViewModel.Event) {
++        when (model) {
++            else -> {}
++        }
++
++    }
++}
+\ No newline at end of file
+diff --git a/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListViewModel.kt b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListViewModel.kt
+new file mode 100644
+index 0000000..0e72489
+--- /dev/null
++++ b/app/src/main/java/com/cartones/de/bingo/en/casa/gratis/loteria/ui/view/list/CardsListViewModel.kt
+@@ -0,0 +1,32 @@
++package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards
++
++import androidx.lifecycle.viewModelScope
++import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseViewModel
++import kotlinx.coroutines.channels.Channel
++import kotlinx.coroutines.flow.receiveAsFlow
++import kotlinx.coroutines.launch
++
++class CardsBingoViewModel : BaseViewModel() {
++
++    sealed class Event {
++    }
++
++    private val eventChannel = Channel<Event>(Channel.BUFFERED)
++    val eventsFlow = eventChannel.receiveAsFlow()
++
++    //region ViewModel Input
++    fun initFlow() {
++
++    }
++
++
++    //endregion
++
++    //region ViewModel Output
++    private fun doAction(event: Event) {
++        viewModelScope.launch {
++            eventChannel.send(event)
++        }
++    }
++    //endregion
++}
+\ No newline at end of file
+diff --git a/app/src/main/res/drawable-v24/a0.xml b/app/src/main/res/drawable-v24/a0.xml
+new file mode 100644
+index 0000000..333ebd6
+--- /dev/null
++++ b/app/src/main/res/drawable-v24/a0.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android"
++    android:shape="rectangle">
++
++ <stroke android:color="@color/cards"
++     android:width="1dp"/>
++ <solid android:color="@color/cards"
++  />
++    
++</shape>
+\ No newline at end of file
+diff --git a/app/src/main/res/drawable/selected.xml b/app/src/main/res/drawable/selected.xml
+new file mode 100644
+index 0000000..333ebd6
+--- /dev/null
++++ b/app/src/main/res/drawable/selected.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android"
++    android:shape="rectangle">
++
++ <stroke android:color="@color/cards"
++     android:width="1dp"/>
++ <solid android:color="@color/cards"
++  />
++    
++</shape>
+\ No newline at end of file
+diff --git a/app/src/main/res/layout/fragment_cards_list.xml b/app/src/main/res/layout/fragment_cards_list.xml
+new file mode 100644
+index 0000000..9a5c59c
+--- /dev/null
++++ b/app/src/main/res/layout/fragment_cards_list.xml
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/white"/>
+\ No newline at end of file
+diff --git a/app/src/main/res/layout/item_card.xml b/app/src/main/res/layout/item_card.xml
+new file mode 100644
+index 0000000..2789aa0
+--- /dev/null
++++ b/app/src/main/res/layout/item_card.xml
+@@ -0,0 +1,399 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:background="@drawable/outside_line"
++    android:padding="15dp">
++
++    <androidx.constraintlayout.widget.ConstraintLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        android:background="@drawable/small_outside_line"
++        >
++
++        <TextView
++            android:id="@+id/textA1"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintEnd_toStartOf="@id/textA2"/>
++
++        <TextView
++            android:id="@+id/textA2"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toEndOf="@id/textA1"
++            app:layout_constraintEnd_toStartOf="@id/textA3"/>
++
++        <TextView
++            android:id="@+id/textA3"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toEndOf="@id/textA2"
++            app:layout_constraintEnd_toStartOf="@id/textA4"/>
++
++        <TextView
++            android:id="@+id/textA4"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toEndOf="@id/textA3"
++            app:layout_constraintEnd_toStartOf="@id/textA5"/>
++
++        <TextView
++            android:id="@+id/textA5"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toEndOf="@id/textA4"
++            app:layout_constraintEnd_toStartOf="@id/textA6"/>
++
++        <TextView
++            android:id="@+id/textA6"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toEndOf="@id/textA5"
++            app:layout_constraintEnd_toStartOf="@id/textA7"/>
++
++        <TextView
++            android:id="@+id/textA7"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toEndOf="@id/textA6"
++            app:layout_constraintEnd_toStartOf="@id/textA8"/>
++
++        <TextView
++            android:id="@+id/textA8"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toEndOf="@id/textA7"
++            app:layout_constraintEnd_toStartOf="@id/textA9"/>
++
++        <TextView
++            android:id="@+id/textA9"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintStart_toEndOf="@id/textA8"
++            app:layout_constraintEnd_toEndOf="parent"/>
++
++        <TextView
++            android:id="@+id/textB1"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textA1"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintEnd_toStartOf="@id/textB2"/>
++
++        <TextView
++            android:id="@+id/textB2"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textA2"
++            app:layout_constraintStart_toEndOf="@id/textB1"
++            app:layout_constraintEnd_toStartOf="@id/textB3"/>
++
++        <TextView
++            android:id="@+id/textB3"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textA2"
++            app:layout_constraintStart_toEndOf="@id/textB2"
++            app:layout_constraintEnd_toStartOf="@id/textB4"/>
++
++        <TextView
++            android:id="@+id/textB4"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textA2"
++            app:layout_constraintStart_toEndOf="@id/textB3"
++            app:layout_constraintEnd_toStartOf="@id/textB5"/>
++
++        <TextView
++            android:id="@+id/textB5"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textA2"
++            app:layout_constraintStart_toEndOf="@id/textB4"
++            app:layout_constraintEnd_toStartOf="@id/textB6"/>
++
++        <TextView
++            android:id="@+id/textB6"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textA2"
++            app:layout_constraintStart_toEndOf="@id/textB5"
++            app:layout_constraintEnd_toStartOf="@id/textB7"/>
++
++        <TextView
++            android:id="@+id/textB7"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textA2"
++            app:layout_constraintStart_toEndOf="@id/textB6"
++            app:layout_constraintEnd_toStartOf="@id/textB8"/>
++
++        <TextView
++            android:id="@+id/textB8"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textA2"
++            app:layout_constraintStart_toEndOf="@id/textB7"
++            app:layout_constraintEnd_toStartOf="@id/textB9"/>
++
++        <TextView
++            android:id="@+id/textB9"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:textColor="@color/blue_number"
++            android:background="@drawable/small_outside_line"
++            app:layout_constraintTop_toBottomOf="@id/textA2"
++            app:layout_constraintStart_toEndOf="@id/textB8"
++            app:layout_constraintEnd_toEndOf="parent"/>
++
++        <TextView
++            android:id="@+id/textC1"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:textColor="@color/blue_number"
++            android:background="@drawable/small_outside_line"
++            app:layout_constraintTop_toBottomOf="@id/textB1"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintEnd_toStartOf="@id/textC2"/>
++
++        <TextView
++            android:id="@+id/textC2"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textB2"
++            app:layout_constraintStart_toEndOf="@id/textC1"
++            app:layout_constraintEnd_toStartOf="@id/textC3"/>
++
++        <TextView
++            android:id="@+id/textC3"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textB2"
++            app:layout_constraintStart_toEndOf="@id/textC2"
++            app:layout_constraintEnd_toStartOf="@id/textC4"/>
++
++        <TextView
++            android:id="@+id/textC4"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:textColor="@color/blue_number"
++            android:background="@drawable/small_outside_line"
++            app:layout_constraintTop_toBottomOf="@id/textB2"
++            app:layout_constraintStart_toEndOf="@id/textC3"
++            app:layout_constraintEnd_toStartOf="@id/textC5"/>
++
++        <TextView
++            android:id="@+id/textC5"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:textColor="@color/blue_number"
++            android:background="@drawable/small_outside_line"
++            app:layout_constraintTop_toBottomOf="@id/textB2"
++            app:layout_constraintStart_toEndOf="@id/textC4"
++            app:layout_constraintEnd_toStartOf="@id/textC6"/>
++
++        <TextView
++            android:id="@+id/textC6"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:textColor="@color/blue_number"
++            android:background="@drawable/small_outside_line"
++            app:layout_constraintTop_toBottomOf="@id/textB2"
++            app:layout_constraintStart_toEndOf="@id/textC5"
++            app:layout_constraintEnd_toStartOf="@id/textC7"/>
++
++        <TextView
++            android:id="@+id/textC7"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:textColor="@color/blue_number"
++            android:background="@drawable/small_outside_line"
++            app:layout_constraintTop_toBottomOf="@id/textB2"
++            app:layout_constraintStart_toEndOf="@id/textC6"
++            app:layout_constraintEnd_toStartOf="@id/textC8"/>
++
++        <TextView
++            android:id="@+id/textC8"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:textColor="@color/blue_number"
++            android:background="@drawable/small_outside_line"
++            app:layout_constraintTop_toBottomOf="@id/textB2"
++            app:layout_constraintStart_toEndOf="@id/textC7"
++            app:layout_constraintEnd_toStartOf="@id/textC9"/>
++
++        <TextView
++            android:id="@+id/textC9"
++            android:layout_width="0dp"
++            android:layout_height="wrap_content"
++            android:gravity="center"
++            android:text="1"
++            android:textStyle="bold"
++            android:textSize="30dp"
++            android:background="@drawable/small_outside_line"
++            android:textColor="@color/blue_number"
++            app:layout_constraintTop_toBottomOf="@id/textB2"
++            app:layout_constraintStart_toEndOf="@id/textC8"
++            app:layout_constraintEnd_toEndOf="parent"/>
++
++    </androidx.constraintlayout.widget.ConstraintLayout>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+-- 
+2.36.0.windows.1
+

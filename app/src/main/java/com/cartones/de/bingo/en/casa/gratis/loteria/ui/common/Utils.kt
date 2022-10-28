@@ -1,7 +1,11 @@
 package com.cartones.de.bingo.en.casa.gratis.loteria.ui.common
 
+import android.content.SharedPreferences
+import android.widget.ImageView
 import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class Utils {
 
@@ -51,6 +55,29 @@ class Utils {
                 NumberCard(R.drawable.a8,R.drawable.a14,R.drawable.a0,R.drawable.a0,R.drawable.a40,R.drawable.a0,R.drawable.a0,R.drawable.a71,R.drawable.a83,R.drawable.a0,R.drawable.a17,R.drawable.a0,R.drawable.a32,R.drawable.a42,R.drawable.a0,R.drawable.a62,R.drawable.a77,R.drawable.a0,R.drawable.a9,R.drawable.a0,R.drawable.a23,R.drawable.a0,R.drawable.a0,R.drawable.a56,R.drawable.a64,R.drawable.a0,R.drawable.a84),
                 NumberCard(R.drawable.a0,R.drawable.a13,R.drawable.a22,R.drawable.a0,R.drawable.a0,R.drawable.a54,R.drawable.a61,R.drawable.a0,R.drawable.a80,R.drawable.a0,R.drawable.a0,R.drawable.a26,R.drawable.a0,R.drawable.a44,R.drawable.a57,R.drawable.a0,R.drawable.a70,R.drawable.a90,R.drawable.a1,R.drawable.a0,R.drawable.a0,R.drawable.a37,R.drawable.a47,R.drawable.a0,R.drawable.a68,R.drawable.a72,R.drawable.a0),
             )
+        }
+
+        fun saveLists(sharedPref:SharedPreferences, list:List<NumberCard>){
+            val gson = Gson()
+            val json = gson.toJson(list)//converting list to Json
+            sharedPref.edit().putString("KEY_NUMBER_CARD_LIST",json).apply()
+        }
+
+        fun getList(sharedPref:SharedPreferences):List<NumberCard>{
+            val gson = Gson()
+            val json = sharedPref.getString("KEY_NUMBER_CARD_LIST",null)
+            val type = object : TypeToken<List<NumberCard>>(){}.type
+            return gson.fromJson(json,type)
+        }
+
+        fun didClickNumberCards(clickIsTrue: Boolean, image: ImageView): Boolean {
+            return if (clickIsTrue) {
+                image.background = image.context.resources.getDrawable(R.drawable.small_outside_line)
+                false
+            } else {
+                image.background = image.context.resources.getDrawable(R.drawable.selected)
+                true
+            }
         }
     }
 }
