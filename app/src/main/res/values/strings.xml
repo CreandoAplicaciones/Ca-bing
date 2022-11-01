@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Cartones de bingo</string>
+    <string name="bingo">Bingo</string>
+    <string name="speed">Velocidad</string>
+    <string name="selected_this_cards">Elige los cartones que más te guste</string>
+    <string name="go_out_app">Presiona de nuevo para salir</string>
+
+    //Dialog
+    <string name="do_you_want_play_again">¿Quieres empezar una nueva partida?</string>
+    <string name="do_you_want_more_cards">¿Quieres más cartones?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+
+    //Tutorial
+    <string name="tutorial_if_you_want_more_cards">Si quieres más cartones pulsa aquí</string>
+    <string name="tutorial_if_you_want_changer_speed">Controla la velocidad con la que sale los números pulsando el + y el -</string>
+    <string name="tutorial_if_you_want_new_play">Para empezar nueva partida pulsa aquí</string>
+    <string name="tutorial_if_you_want_to_start">Para empezar pulsa aquí</string>
+
 </resources>

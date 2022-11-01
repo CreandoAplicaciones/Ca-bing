@@ -17,7 +17,7 @@ class CardsListViewModel: BaseViewModel() {
 
     sealed class Event {
         data class ShowCards(val numberCards: List<NumberCard>): Event()
-        object GoToCardsBingo: Event()
+        data class GoToCardsBingo(val numberCard: NumberCard): Event()
     }
 
     private val eventChannel = Channel<Event>(Channel.BUFFERED)
@@ -32,9 +32,7 @@ class CardsListViewModel: BaseViewModel() {
     }
 
     fun onExerciseClicked(numberCard: NumberCard) {
-        listNumber.add(numberCard)
-        Utils.saveLists(sharedPref, listNumber)
-        doAction(Event.GoToCardsBingo)
+        doAction(Event.GoToCardsBingo(numberCard))
     }
 
 

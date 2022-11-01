@@ -18,5 +18,8 @@
         android:name="com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards.CardsBingoFragment"
         android:label="CardsBingoFragment"
         tools:layout="@layout/fragment_cards_bingo">
-   </fragment>
+    <argument
+        android:name="numberCard"
+        app:argType="com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard" />
+    </fragment>
 </navigation>

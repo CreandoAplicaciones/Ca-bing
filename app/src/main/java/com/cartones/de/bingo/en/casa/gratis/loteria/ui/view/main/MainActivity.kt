@@ -1,15 +1,19 @@
 package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.main
 
+import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.ActivityMainBinding
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseActivity
-
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.Utils
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.main.MainViewModel.Event.*
 import com.google.android.gms.ads.*
@@ -22,7 +26,7 @@ class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
     private val adRequest = AdRequest.Builder().build()
     private var mInterstitialAd: InterstitialAd? = null
-
+    private var doubleBackToExitPressedOnce = false
 
     companion object {
         fun newIntent(context: Context) = Intent(context, MainActivity::class.java).apply {

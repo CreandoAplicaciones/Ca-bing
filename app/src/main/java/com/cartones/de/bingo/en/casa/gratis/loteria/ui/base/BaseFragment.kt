@@ -1,6 +1,7 @@
 package com.cartones.de.bingo.en.casa.gratis.loteria.ui.base
 
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
 import com.cartones.de.bingo.en.casa.gratis.loteria.R

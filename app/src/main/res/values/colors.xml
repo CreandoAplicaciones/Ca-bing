@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="cards">#1E52D6</color>
+    <color name="cards">#2AB2EF</color>
+    <color name="transparent">#00D5B2F4</color>
 </resources>

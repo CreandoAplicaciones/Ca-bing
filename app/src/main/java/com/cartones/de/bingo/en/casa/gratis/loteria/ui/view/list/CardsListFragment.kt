@@ -37,7 +37,7 @@ class CardsListFragment : BaseFragment() {
                     { numberCard -> viewModel.onExerciseClicked(numberCard)},
                     model.numberCards)
             }
-            is GoToCardsBingo -> findNavController().navigate(R.id.cardsBingoFragment)
+            is GoToCardsBingo -> findNavController().navigate(CardsListFragmentDirections.actionCardsListFragmentToCardsBingoFragment(model.numberCard))
         }
 
 

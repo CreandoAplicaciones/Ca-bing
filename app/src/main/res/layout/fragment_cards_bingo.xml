@@ -6,16 +6,286 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="17dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rVCards">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_marginTop="19dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cards">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintlayoutSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/constraintlayoutBall"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotobold"
+                    android:text="@string/speed"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/imageMore"
+                    app:layout_constraintEnd_toEndOf="@id/imageLess"
+                    app:layout_constraintStart_toStartOf="@id/imageMore"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageMore"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/gradient_button_background"
+                    android:padding="12dp"
+                    android:src="@drawable/more"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textNumberSpeed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textSpeed" />
+
+                <TextView
+                    android:id="@+id/textNumberSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotomedium"
+                    android:padding="10dp"
+                    android:text="3"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/imageMore"
+                    app:layout_constraintEnd_toStartOf="@id/imageLess"
+                    app:layout_constraintStart_toEndOf="@id/imageMore"
+                    app:layout_constraintTop_toTopOf="@id/imageMore" />
+
+                <ImageView
+                    android:id="@+id/imageLess"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/gradient_button_background"
+                    android:padding="12dp"
+                    android:src="@drawable/less"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/textNumberSpeed"
+                    app:layout_constraintTop_toBottomOf="@id/textSpeed" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintlayoutBall"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/constraintlayoutSpeed">
+
+                <TextView
+                    android:id="@+id/txtball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bola"
+                    android:fontFamily="@font/robotomedium"
+                    android:textSize="22dp"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/viewBall"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <ImageView
+                    android:id="@+id/viewBall"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ball"
+                    android:background="@drawable/ball_color"
+                    app:layout_constraintTop_toTopOf="@id/txtNumber"
+                    app:layout_constraintBottom_toBottomOf="@id/txtNumber"
+                    app:layout_constraintStart_toStartOf="@id/txtNumber"
+                    app:layout_constraintEnd_toEndOf="@id/txtNumber"
+                    />
+
+                <TextView
+                    android:id="@+id/txtNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    tools:text="90"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:paddingBottom="2dp"
+                    android:textSize="49dp"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rVCards"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="0dp"
+        android:foregroundGravity="bottom"
+        app:layout_constraintBottom_toTopOf="@id/cardViewBottom"
+        app:layout_constraintTop_toBottomOf="@id/cardViewSup"
         android:background="@color/white"
+        android:layout_marginBottom="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_card"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+        
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-20dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="17dp"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cards"
+            android:layout_marginBottom="19dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/imageMoreCards"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:padding="15dp"
+                android:src="@drawable/morecards"
+                android:background="@drawable/gradient_button_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/image"/>
+
+
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:padding="12dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageMoreCards"
+                app:layout_constraintEnd_toStartOf="@id/imageRandom"/>
+
+            <ImageView
+                android:id="@+id/imagePLay"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/play"
+                android:layout_margin="5dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/gradient_button_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageMoreCards"
+                app:layout_constraintEnd_toStartOf="@id/imageRandom"/>
+
+            <ImageView
+                android:id="@+id/imagePause"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/pause"
+                android:visibility="gone"
+                android:padding="12dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/gradient_button_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageMoreCards"
+                app:layout_constraintEnd_toStartOf="@id/imageRandom"/>
+
+            <ImageView
+                android:id="@+id/imageRandom"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/repit"
+                android:padding="15dp"
+                android:background="@drawable/gradient_button_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintEnd_toStartOf="@id/imageCheck"/>
+
+            <ImageView
+                android:id="@+id/imageCheck"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/check"
+                android:padding="15dp"
+                android:background="@drawable/gradient_button_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageRandom"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

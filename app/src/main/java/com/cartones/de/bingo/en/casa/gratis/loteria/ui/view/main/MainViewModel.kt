@@ -1,7 +1,9 @@
 package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.main
 
+import android.content.SharedPreferences
 import androidx.lifecycle.viewModelScope
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseViewModel
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.Utils
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
@@ -17,6 +19,7 @@ class MainViewModel : BaseViewModel() {
     val eventsFlow = eventChannel.receiveAsFlow()
    // private var db = Firebase.firestore
     private var banner = false
+    private lateinit var sharedPref: SharedPreferences
 
     //region ViewModel Input
     fun initFlow() {
@@ -40,8 +43,6 @@ class MainViewModel : BaseViewModel() {
     }
 
    */
-
-
 
     //endregion
 

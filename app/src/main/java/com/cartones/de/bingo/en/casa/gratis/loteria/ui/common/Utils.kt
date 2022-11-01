@@ -1,11 +1,16 @@
 package com.cartones.de.bingo.en.casa.gratis.loteria.ui.common
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.widget.ImageView
+import android.widget.Toast
 import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.Delay
+import kotlin.random.Random
+import kotlin.random.nextInt
 
 class Utils {
 
@@ -57,18 +62,7 @@ class Utils {
             )
         }
 
-        fun saveLists(sharedPref:SharedPreferences, list:List<NumberCard>){
-            val gson = Gson()
-            val json = gson.toJson(list)//converting list to Json
-            sharedPref.edit().putString("KEY_NUMBER_CARD_LIST",json).apply()
-        }
 
-        fun getList(sharedPref:SharedPreferences):List<NumberCard>{
-            val gson = Gson()
-            val json = sharedPref.getString("KEY_NUMBER_CARD_LIST",null)
-            val type = object : TypeToken<List<NumberCard>>(){}.type
-            return gson.fromJson(json,type)
-        }
 
         fun didClickNumberCards(clickIsTrue: Boolean, image: ImageView): Boolean {
             return if (clickIsTrue) {
@@ -78,6 +72,124 @@ class Utils {
                 image.background = image.context.resources.getDrawable(R.drawable.selected)
                 true
             }
+        }
+
+        fun getNumberRandom(): List<Int> {
+            val random = List(9000) { Random.nextInt(1..90) }
+                .distinct()
+            return random
+        }
+
+        fun speed(speedNumber: Int):Long {
+            return when(speedNumber) {
+                0 -> 5400L
+                1 -> 4600L
+                2 -> 3800L
+                3 -> 3000L
+                4 -> 2200L
+                5 -> 1400L
+                6 -> 800L
+                else -> 3000L
+            }
+        }
+        fun checkAudio(number: Int): Int{
+            return when (number){
+                1-> R.raw.uno
+                2-> R.raw.dos
+                3-> R.raw.tres
+                4-> R.raw.cuatro
+                5-> R.raw.cinco
+                6-> R.raw.seis
+                7-> R.raw.siete
+                8-> R.raw.ocho
+                9-> R.raw.nueve
+                10-> R.raw.diez
+                11-> R.raw.once
+                12-> R.raw.doce
+                13-> R.raw.trece
+                14-> R.raw.catorce
+                15-> R.raw.quince
+                16-> R.raw.dieciseis
+                17-> R.raw.diecisiete
+                18-> R.raw.dieciocho
+                19-> R.raw.diecinueve
+                20-> R.raw.veinte
+                21-> R.raw.veitiuno
+                22-> R.raw.veintidos
+                23-> R.raw.veintitres
+                24-> R.raw.veinticuatro
+                25-> R.raw.veiticinco
+                26-> R.raw.veintiseis
+                27-> R.raw.veintisiete
+                28-> R.raw.veintiocho
+                29-> R.raw.veintinueve
+                30-> R.raw.treinta
+                31-> R.raw.treintiuno
+                32-> R.raw.trentaidos
+                33-> R.raw.trentaitres
+                34-> R.raw.treinticuatro
+                35-> R.raw.treinticinco
+                36-> R.raw.treintayseis
+                37-> R.raw.trentaysiete
+                38-> R.raw.trentayocho
+                39-> R.raw.treintaynueve
+                40-> R.raw.cuarenta
+                41-> R.raw.cuarentayuno
+                42-> R.raw.cuarentaydos
+                43-> R.raw.cuarentaytres
+                44-> R.raw.cuarentaycuatro
+                45-> R.raw.cuarentaycinco
+                46-> R.raw.cuarentayseis
+                47-> R.raw.cuarentaysiete
+                48-> R.raw.cuarentayocho
+                49-> R.raw.cuarentaynueve
+                50-> R.raw.cincuenta
+                51-> R.raw.cincuentayuno
+                52-> R.raw.cincuentaydos
+                53-> R.raw.cincuentaytres
+                54-> R.raw.cincuentaycuatro
+                55-> R.raw.cincuentaycinco
+                56-> R.raw.cincuentayseis
+                57-> R.raw.cincuentaysiete
+                58-> R.raw.cincuentayocho
+                59-> R.raw.cincuentaynueve
+                60-> R.raw.sesenta
+                61-> R.raw.sesentayuno
+                62-> R.raw.sesentaydos
+                63-> R.raw.sesentaytres
+                64-> R.raw.sesentaycuatro
+                65-> R.raw.sesentaycinco
+                66-> R.raw.sesentayseis
+                67-> R.raw.sesentaysiete
+                68-> R.raw.sesentayocho
+                69-> R.raw.sesentaynueve
+                70-> R.raw.setenta
+                71-> R.raw.setentayuno
+                72-> R.raw.setentaydos
+                73-> R.raw.setentaytres
+                74-> R.raw.setentaycuatro
+                75-> R.raw.setentaycinco
+                76-> R.raw.setentayseis
+                77-> R.raw.setentaysiete
+                78-> R.raw.setentayocho
+                79-> R.raw.setentaynueve
+                80-> R.raw.ochenta
+                81-> R.raw.ochentayuno
+                82-> R.raw.ochentaydos
+                83-> R.raw.ochentaytres
+                84-> R.raw.ochentaycuatro
+                85-> R.raw.ochentaycinco
+                86-> R.raw.ochentayseis
+                87-> R.raw.ochentaysiete
+                88-> R.raw.ochentayocho
+                89-> R.raw.ochentaynueve
+                90-> R.raw.noventa
+                else -> {R.raw.uno}
+            }
+        }
+
+        fun toast(context: Context, message: String) {
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
         }
     }
 }

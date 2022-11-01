@@ -2,345 +2,350 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/outside_line"
-    android:id="@+id/layout"
-    android:layout_marginVertical="10dp"
-    android:padding="15dp">
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/small_outside_line"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="17dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageA1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageA2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/outside_line">
 
-        <ImageView
-            android:id="@+id/imageA2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageA3"
-            app:layout_constraintStart_toEndOf="@id/imageA1"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageA1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageA2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageA3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageA4"
-            app:layout_constraintStart_toEndOf="@id/imageA2"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageA2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageA3"
+                    app:layout_constraintStart_toEndOf="@id/imageA1"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageA4"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageA5"
-            app:layout_constraintStart_toEndOf="@id/imageA3"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageA3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageA4"
+                    app:layout_constraintStart_toEndOf="@id/imageA2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageA5"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageA6"
-            app:layout_constraintStart_toEndOf="@id/imageA4"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageA4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageA5"
+                    app:layout_constraintStart_toEndOf="@id/imageA3"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageA6"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageA7"
-            app:layout_constraintStart_toEndOf="@id/imageA5"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageA5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageA6"
+                    app:layout_constraintStart_toEndOf="@id/imageA4"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageA7"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageA8"
-            app:layout_constraintStart_toEndOf="@id/imageA6"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageA6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageA7"
+                    app:layout_constraintStart_toEndOf="@id/imageA5"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageA8"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageA9"
-            app:layout_constraintStart_toEndOf="@id/imageA7"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageA7"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageA8"
+                    app:layout_constraintStart_toEndOf="@id/imageA6"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageA9"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageA8"
-            app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageA8"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageA9"
+                    app:layout_constraintStart_toEndOf="@id/imageA7"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageB1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageB2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageA1" />
+                <ImageView
+                    android:id="@+id/imageA9"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageA8"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageB2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageB3"
-            app:layout_constraintStart_toEndOf="@id/imageB1"
-            app:layout_constraintTop_toBottomOf="@id/imageA2" />
+                <ImageView
+                    android:id="@+id/imageB1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageB2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageA1" />
 
-        <ImageView
-            android:id="@+id/imageB3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageB4"
-            app:layout_constraintStart_toEndOf="@id/imageB2"
-            app:layout_constraintTop_toBottomOf="@id/imageA2" />
+                <ImageView
+                    android:id="@+id/imageB2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageB3"
+                    app:layout_constraintStart_toEndOf="@id/imageB1"
+                    app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <ImageView
-            android:id="@+id/imageB4"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageB5"
-            app:layout_constraintStart_toEndOf="@id/imageB3"
-            app:layout_constraintTop_toBottomOf="@id/imageA2" />
+                <ImageView
+                    android:id="@+id/imageB3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageB4"
+                    app:layout_constraintStart_toEndOf="@id/imageB2"
+                    app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <ImageView
-            android:id="@+id/imageB5"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageB6"
-            app:layout_constraintStart_toEndOf="@id/imageB4"
-            app:layout_constraintTop_toBottomOf="@id/imageA2" />
+                <ImageView
+                    android:id="@+id/imageB4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageB5"
+                    app:layout_constraintStart_toEndOf="@id/imageB3"
+                    app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <ImageView
-            android:id="@+id/imageB6"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageB7"
-            app:layout_constraintStart_toEndOf="@id/imageB5"
-            app:layout_constraintTop_toBottomOf="@id/imageA2" />
+                <ImageView
+                    android:id="@+id/imageB5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageB6"
+                    app:layout_constraintStart_toEndOf="@id/imageB4"
+                    app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <ImageView
-            android:id="@+id/imageB7"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageB8"
-            app:layout_constraintStart_toEndOf="@id/imageB6"
-            app:layout_constraintTop_toBottomOf="@id/imageA2" />
+                <ImageView
+                    android:id="@+id/imageB6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageB7"
+                    app:layout_constraintStart_toEndOf="@id/imageB5"
+                    app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <ImageView
-            android:id="@+id/imageB8"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageB9"
-            app:layout_constraintStart_toEndOf="@id/imageB7"
-            app:layout_constraintTop_toBottomOf="@id/imageA2" />
+                <ImageView
+                    android:id="@+id/imageB7"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageB8"
+                    app:layout_constraintStart_toEndOf="@id/imageB6"
+                    app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <ImageView
-            android:id="@+id/imageB9"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageB8"
-            app:layout_constraintTop_toBottomOf="@id/imageA2" />
+                <ImageView
+                    android:id="@+id/imageB8"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageB9"
+                    app:layout_constraintStart_toEndOf="@id/imageB7"
+                    app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <ImageView
-            android:id="@+id/imageC1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageC2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageB1" />
+                <ImageView
+                    android:id="@+id/imageB9"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageB8"
+                    app:layout_constraintTop_toBottomOf="@id/imageA2" />
 
-        <ImageView
-            android:id="@+id/imageC2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageC3"
-            app:layout_constraintStart_toEndOf="@id/imageC1"
-            app:layout_constraintTop_toBottomOf="@id/imageB2" />
+                <ImageView
+                    android:id="@+id/imageC1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageC2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageB1" />
 
-        <ImageView
-            android:id="@+id/imageC3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageC4"
-            app:layout_constraintStart_toEndOf="@id/imageC2"
-            app:layout_constraintTop_toBottomOf="@id/imageB2" />
+                <ImageView
+                    android:id="@+id/imageC2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageC3"
+                    app:layout_constraintStart_toEndOf="@id/imageC1"
+                    app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <ImageView
-            android:id="@+id/imageC4"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageC5"
-            app:layout_constraintStart_toEndOf="@id/imageC3"
-            app:layout_constraintTop_toBottomOf="@id/imageB2" />
+                <ImageView
+                    android:id="@+id/imageC3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageC4"
+                    app:layout_constraintStart_toEndOf="@id/imageC2"
+                    app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <ImageView
-            android:id="@+id/imageC5"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageC6"
-            app:layout_constraintStart_toEndOf="@id/imageC4"
-            app:layout_constraintTop_toBottomOf="@id/imageB2" />
+                <ImageView
+                    android:id="@+id/imageC4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageC5"
+                    app:layout_constraintStart_toEndOf="@id/imageC3"
+                    app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <ImageView
-            android:id="@+id/imageC6"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageC7"
-            app:layout_constraintStart_toEndOf="@id/imageC5"
-            app:layout_constraintTop_toBottomOf="@id/imageB2" />
+                <ImageView
+                    android:id="@+id/imageC5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageC6"
+                    app:layout_constraintStart_toEndOf="@id/imageC4"
+                    app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <ImageView
-            android:id="@+id/imageC7"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageC8"
-            app:layout_constraintStart_toEndOf="@id/imageC6"
-            app:layout_constraintTop_toBottomOf="@id/imageB2" />
+                <ImageView
+                    android:id="@+id/imageC6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageC7"
+                    app:layout_constraintStart_toEndOf="@id/imageC5"
+                    app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <ImageView
-            android:id="@+id/imageC8"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toStartOf="@id/imageC9"
-            app:layout_constraintStart_toEndOf="@id/imageC7"
-            app:layout_constraintTop_toBottomOf="@id/imageB2" />
+                <ImageView
+                    android:id="@+id/imageC7"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageC8"
+                    app:layout_constraintStart_toEndOf="@id/imageC6"
+                    app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-        <ImageView
-            android:id="@+id/imageC9"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/small_outside_line"
-            android:gravity="center"
-            android:src="@drawable/a90"
-            app:layout_constraintDimensionRatio="6:7"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageC8"
-            app:layout_constraintTop_toBottomOf="@id/imageB2" />
+                <ImageView
+                    android:id="@+id/imageC8"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toStartOf="@id/imageC9"
+                    app:layout_constraintStart_toEndOf="@id/imageC7"
+                    app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imageC9"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/small_outside_line"
+                    android:gravity="center"
+                    android:src="@drawable/a90"
+                    app:layout_constraintDimensionRatio="6:7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageC8"
+                    app:layout_constraintTop_toBottomOf="@id/imageB2" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
