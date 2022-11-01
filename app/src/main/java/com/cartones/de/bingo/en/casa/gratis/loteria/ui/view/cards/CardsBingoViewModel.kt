@@ -9,7 +9,6 @@ import android.media.MediaPlayer
 import androidx.lifecycle.viewModelScope
 import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseViewModel
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.NUMBER_CARDS_LIST
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.Utils
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.save.Prefs
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
@@ -18,7 +17,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.concurrent.schedule
-import kotlin.math.E
+
 
 
 class CardsBingoViewModel: BaseViewModel() {

@@ -11,7 +11,7 @@
         android:layout_height="40dp"
         app:srcCompat="@drawable/close"
         android:padding="10dp"
-        android:layout_margin="5dp"
+        android:layout_margin="15dp"
         android:background="@drawable/gradient_button_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
