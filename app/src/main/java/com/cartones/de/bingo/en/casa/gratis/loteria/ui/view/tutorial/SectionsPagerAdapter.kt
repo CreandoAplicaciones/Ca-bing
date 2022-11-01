@@ -1,4 +1,4 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.tutorial
+package com.vegano.en21.dias.ui.view.tutorial
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -9,5 +9,5 @@ class SectionsPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAda
     override fun createFragment(position: Int): Fragment =
         TutorialFragment.newInstance(position + 1)
 
-    override fun getItemCount(): Int = 4
+    override fun getItemCount(): Int = 3
 }

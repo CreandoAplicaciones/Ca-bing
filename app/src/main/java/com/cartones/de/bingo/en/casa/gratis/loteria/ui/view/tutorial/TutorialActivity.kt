@@ -1,11 +1,11 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.tutorial
+package com.vegano.en21.dias.ui.view.tutorial
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.ActivityTutorialBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import com.vegano.en21.dias.databinding.ActivityTutorialBinding
 
 
 class TutorialActivity : AppCompatActivity() {

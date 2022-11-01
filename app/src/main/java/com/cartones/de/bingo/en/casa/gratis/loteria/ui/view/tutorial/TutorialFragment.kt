@@ -1,8 +1,5 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.tutorial
+package com.vegano.en21.dias.ui.view.tutorial
 
-import android.app.Activity
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,18 +8,16 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentTutorialBinding
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseFragment
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.SHARED_NAME
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.save.Prefs
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.main.MainActivity
+import com.vegano.en21.dias.databinding.FragmentTutorialBinding
+import com.vegano.en21.dias.save.SaveSheared
+import com.vegano.en21.dias.ui.base.BaseFragment
+import com.vegano.en21.dias.ui.view.main.MainActivity
+
 
 class TutorialFragment : BaseFragment() {
 
     private lateinit var binding: FragmentTutorialBinding
     private lateinit var viewModel: TutorialViewModel
-    private lateinit var sharedPref: SharedPreferences
-
 
     companion object {
         private const val ARG_SECTION_NUMBER = "section_number"
@@ -38,9 +33,8 @@ class TutorialFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE)
         viewModel = ViewModelProvider(this)[TutorialViewModel::class.java].apply {
-            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 4)
+            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 3)
         }
     }
 
@@ -62,8 +56,7 @@ class TutorialFragment : BaseFragment() {
             button.visibility = it
             binding.btBegin.setOnClickListener {
                 viewModel.didClickOnClickBegin()
-                sharedPref = requireContext().getSharedPreferences(SHARED_NAME,0)
-                Prefs.saveFirstDay(sharedPref, true)
+                SaveSheared.prefs.saveFirstDay(true)
                 startActivity(MainActivity.newIntent(requireContext()))}
 
         }

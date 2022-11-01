@@ -1,19 +1,19 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.tutorial
+package com.vegano.en21.dias.ui.view.tutorial
 
 import android.view.View
 import androidx.lifecycle.*
-import com.cartones.de.bingo.en.casa.gratis.loteria.R
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseViewModel
+import com.vegano.en21.dias.R
+import com.vegano.en21.dias.ui.base.BaseViewModel
+
 
 class TutorialViewModel: BaseViewModel() {
 
     private val _index = MutableLiveData<Int>()
     val text: LiveData<Int> = Transformations.map(_index) {
         when(it){
-            1-> R.string.tutorial_if_you_want_more_cards
-            2-> R.string.tutorial_if_you_want_changer_speed
-            3-> R.string.tutorial_if_you_want_to_start
-            4-> R.string.tutorial_if_you_want_new_play
+            1-> R.string.totorial_this_app
+            2-> R.string.totorial_your_body
+            3-> R.string.tutorial_are_you_ready
             else -> it
         }
     }
@@ -21,11 +21,10 @@ class TutorialViewModel: BaseViewModel() {
 
     val image: LiveData<Int> = Transformations.map(_index) {
         when(it){
-            1-> R.drawable.tutorial_more_cards
-            2-> R.drawable.tutorial_speed
-            3-> R.drawable.tutorial_play
-            4-> R.drawable.tutorial_new_play
-            else -> R.drawable.tutorial_more_cards
+            1-> R.drawable.this_app1
+            2-> R.drawable.you_body2
+            3-> R.drawable.are_you_ready3
+            else -> R.drawable.this_app1
         }
     }
 
@@ -33,8 +32,7 @@ class TutorialViewModel: BaseViewModel() {
         when(it){
             1->  View.INVISIBLE
             2-> View.INVISIBLE
-            3-> View.INVISIBLE
-            4-> View.VISIBLE
+            3-> View.VISIBLE
             else -> View.INVISIBLE
         }
     }

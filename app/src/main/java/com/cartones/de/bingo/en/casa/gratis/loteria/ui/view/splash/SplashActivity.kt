@@ -1,15 +1,15 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.splash
+package com.vegano.en21.dias.ui.view.splash
 
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.view.WindowCompat
-import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.ActivitySplashBinding
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseActivity
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.main.MainActivity
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.splash.SplashViewModel.Event.*
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.tutorial.TutorialActivity
+import com.vegano.en21.dias.databinding.ActivitySplashBinding
+import com.vegano.en21.dias.ui.base.BaseActivity
+import com.vegano.en21.dias.ui.common.extension.observe
+import com.vegano.en21.dias.ui.view.main.MainActivity
+import com.vegano.en21.dias.ui.view.splash.SplashViewModel.Event.*
+import com.vegano.en21.dias.ui.view.tutorial.TutorialActivity
 
 class SplashActivity : BaseActivity() {
 
@@ -19,7 +19,6 @@ class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         super.init(viewModel)
-        viewModel.initFlow(this)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
