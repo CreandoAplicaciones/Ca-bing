@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "619573014703",
+    "project_id": "cartones-de-bingo",
+    "storage_bucket": "cartones-de-bingo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619573014703:android:0632191cddac39b621e45a",
+        "android_client_info": {
+          "package_name": "com.cartones.de.bingo.en.casa.gratis.loteria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619573014703-2msaon030r9qfptalavg2lpgd0139sm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4PAYitDEI64Ojo42wTKrDxdJTCqsvBKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619573014703-2msaon030r9qfptalavg2lpgd0139sm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

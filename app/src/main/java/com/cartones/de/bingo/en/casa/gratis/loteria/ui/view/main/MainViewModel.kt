@@ -2,8 +2,14 @@ package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.main
 
 import android.content.SharedPreferences
 import androidx.lifecycle.viewModelScope
+import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseViewModel
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.ADMOB
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.BANNER
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.SHOW_BANNER
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.Utils
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
@@ -17,17 +23,16 @@ class MainViewModel : BaseViewModel() {
 
     private val eventChannel = Channel<Event>(Channel.BUFFERED)
     val eventsFlow = eventChannel.receiveAsFlow()
-   // private var db = Firebase.firestore
+    private var db = Firebase.firestore
     private var banner = false
-    private lateinit var sharedPref: SharedPreferences
 
     //region ViewModel Input
     fun initFlow() {
         doAction(Event.SetUp)
-    //    getAdmobBanner()
+        getAdmobBanner()
     }
 
-  /*  private fun getAdmobBanner() {
+    private fun getAdmobBanner() {
         viewModelScope.launch {
             val maximum = db.collection(ADMOB).document(BANNER)
             maximum.get()
@@ -41,9 +46,6 @@ class MainViewModel : BaseViewModel() {
                 }
         }
     }
-
-   */
-
     //endregion
 
     //region ViewModel Output

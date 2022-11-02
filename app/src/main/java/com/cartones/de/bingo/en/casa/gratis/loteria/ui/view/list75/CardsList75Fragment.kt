@@ -1,4 +1,4 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list
+package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list75
 
 import android.content.ContentValues
 import android.os.Bundle
@@ -8,27 +8,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.cartones.de.bingo.en.casa.gratis.loteria.R
-import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsListBinding
+import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsList75Binding
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseFragment
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.GOOGLE_PLAY
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.Utils
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list.CardsListViewModel.Event.*
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list75.CardsList75ViewModel.Event.*
 
 
-class CardsListFragment : BaseFragment() {
+class CardsList75Fragment : BaseFragment() {
 
-    private val viewModel: CardsListViewModel by viewModels()
-    private lateinit var binding: FragmentCardsListBinding
+    private val viewModel: CardsList75ViewModel by viewModels()
+    private lateinit var binding: FragmentCardsList75Binding
     private val adRequest = AdRequest.Builder().build()
     private var mInterstitialAd: InterstitialAd? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = FragmentCardsListBinding.inflate(inflater)
+        binding = FragmentCardsList75Binding.inflate(inflater)
         return binding.root
     }
 
@@ -39,12 +38,12 @@ class CardsListFragment : BaseFragment() {
         viewModel.eventsFlow.observe(viewLifecycleOwner, ::updateUi)
     }
 
-    private fun updateUi(model: CardsListViewModel.Event) {
+    private fun updateUi(model: CardsList75ViewModel.Event) {
         when (model) {
             is SetUp -> binding.buttonShare.setOnClickListener { viewModel.didOnClickButtonShare() }
             is ShowCards ->{
-                binding.rVCards.adapter = CardsListAdapter (
-                    { numberCard -> viewModel.onExerciseClicked(numberCard)},
+                binding.rVCards.adapter = CardsList75Adapter (
+                    { numberCard75 -> viewModel.onExerciseClicked(numberCard75)},
                     model.numberCards)
             }
             is InitialInterstitial -> {
@@ -87,7 +86,7 @@ class CardsListFragment : BaseFragment() {
                 }
             }
             is ShareApp -> Utils.shareApp(getString(model.ResInt, GOOGLE_PLAY), requireActivity())
-            is GoToCardsBingo -> findNavController().navigate(CardsListFragmentDirections.actionCardsListFragmentToCardsBingoFragment(model.numberCard))
+            is GoToCardsBingo75 -> findNavController().navigate(CardsList75FragmentDirections.actionCardsList75FragmentToCardsBingo75Fragment(model.numberCard))
             is ShowInterstitial -> {
                 if (mInterstitialAd != null && model.isVisible) {
                     mInterstitialAd?.show(requireActivity())

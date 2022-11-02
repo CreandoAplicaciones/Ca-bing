@@ -1,6 +1,5 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list
+package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list75
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.viewModelScope
@@ -8,22 +7,21 @@ import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseViewModel
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.*
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.save.Prefs
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.main.MainViewModel
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard75
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-class CardsListViewModel: BaseViewModel() {
+class CardsList75ViewModel: BaseViewModel() {
 
     sealed class Event {
         object SetUp: Event()
         object InitialInterstitial : Event()
         data class ShareApp(val ResInt: Int) : Event()
-        data class ShowCards(val numberCards: List<NumberCard>): Event()
-        data class GoToCardsBingo(val numberCard: NumberCard): Event()
+        data class ShowCards(val numberCards: List<NumberCard75>): Event()
+        data class GoToCardsBingo75(val numberCard: NumberCard75): Event()
         data class ShowInterstitial(val isVisible: Boolean): Event()
     }
 
@@ -38,7 +36,7 @@ class CardsListViewModel: BaseViewModel() {
     //region ViewModel Input
     fun initFlow(context: Context) {
         doAction(Event.SetUp)
-        doAction(Event.ShowCards(Utils.numbers()))
+        doAction(Event.ShowCards(Utils.numbers75()))
         doAction(Event.InitialInterstitial)
         sharedPref = context.getSharedPreferences(SHARED_NAME,0)
         getAdmobInterstitial()
@@ -84,9 +82,9 @@ class CardsListViewModel: BaseViewModel() {
         }
     }
 
-    fun onExerciseClicked(numberCard: NumberCard) {
+    fun onExerciseClicked(numberCard75: NumberCard75) {
         didOnClick()
-        doAction(Event.GoToCardsBingo(numberCard))
+        doAction(Event.GoToCardsBingo75(numberCard75))
     }
 
     fun showedInterstitial() {

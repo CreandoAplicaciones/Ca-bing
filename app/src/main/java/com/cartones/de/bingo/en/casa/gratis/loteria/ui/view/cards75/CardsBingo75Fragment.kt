@@ -1,4 +1,4 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards
+package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards75
 
 import android.content.Intent
 import android.net.Uri
@@ -11,33 +11,34 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.cartones.de.bingo.en.casa.gratis.loteria.R
-import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsBingoBinding
+import com.cartones.de.bingo.en.casa.gratis.loteria.databinding.FragmentCardsBingo75Binding
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseFragment
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.GOOGLE_PLAY
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.Utils
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards.CardsBingoViewModel.Event.*
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards75.CardsBingo75ViewModel.Event.*
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards.DialogRateApp
 
 
-class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, DialogRateApp.OnClickListener{
+class CardsBingo75Fragment : BaseFragment(), DialogRateApp.OnClickListener{
 
-    private val viewModel: CardsBingoViewModel by viewModels()
-    private lateinit var binding: FragmentCardsBingoBinding
-    private val args: CardsBingoFragmentArgs by navArgs()
+    private val viewModel: CardsBingo75ViewModel by viewModels()
+    private lateinit var binding: FragmentCardsBingo75Binding
+    private val args: CardsBingo75FragmentArgs by navArgs()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = FragmentCardsBingoBinding.inflate(inflater)
+        binding = FragmentCardsBingo75Binding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         super.init(viewModel)
-            viewModel.initFlow(requireActivity(), requireContext(), args.numberCard)
+            viewModel.initFlow(requireActivity(), requireContext(), args.numberCard75)
             viewModel.eventsFlow.observe(viewLifecycleOwner, ::updateUi)
     }
 
-    private fun updateUi(model: CardsBingoViewModel.Event) {
+    private fun updateUi(model: CardsBingo75ViewModel.Event) {
         when (model) {
             is SetUp -> {
                 binding.imagePLay.setOnClickListener { viewModel.didOnClickPlay() }
@@ -48,14 +49,14 @@ class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, 
                 binding.imageMoreCards.setOnClickListener { viewModel.didOnClickCardsMore() }
                 binding.imageCheck.setOnClickListener { viewModel.didOnClickCheck() }
             }
-            is ShowCards -> binding.rVCards.adapter = CardsAdapter (model.numberCards)
+            is ShowCards -> binding.rVCards.adapter = CardsBingo75Adapter (model.numberCards)
             is ShowNumber -> binding.txtNumber.text = model.numberRandom
             is ShowLoading -> binding.progressBar.isVisible = model.isVisibility
             is ShowPauseButton -> binding.imagePause.isVisible = model.isVisibility
             is ShowPlayButton -> binding.imagePLay.isVisible = model.isVisibility
             is ChangeSpeedNumber -> binding.textNumberSpeed.text = model.speedNumber
             is GoToBack -> findNavController().popBackStack()
-            is ShowDialogCheck -> DialogFragmentCheck(this, model.listNumbersComeOut).show(parentFragmentManager, null)
+            //is ShowDialogCheck -> DialogFragmentCheck75(this, model.listNumbersComeOut).show(parentFragmentManager, null)
             is ShowDialog -> alertDialog(model.title, model.message, model.firstOption, model.secondOption)
             is ShowDialogRate -> {
                 val rate = DialogRateApp(this )
@@ -76,9 +77,11 @@ class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, 
 
     }
 
-    override fun close() {
+ /*   override fun close() {
         viewModel.closeDialog()
     }
+
+  */
 
     override fun goToGooglePlay(start: Int) {
         if (start == 5 || start == 4) {

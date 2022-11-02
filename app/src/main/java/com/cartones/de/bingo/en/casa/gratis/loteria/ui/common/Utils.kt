@@ -1,11 +1,14 @@
 package com.cartones.de.bingo.en.casa.gratis.loteria.ui.common
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.widget.ImageView
 import android.widget.Toast
 import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard75
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Delay
@@ -62,7 +65,12 @@ class Utils {
             )
         }
 
-
+        fun numbers75(): List<NumberCard75> {
+            return listOf(
+                NumberCard75(R.drawable.a5,R.drawable.a27,R.drawable.a31,R.drawable.a47,R.drawable.a68,R.drawable.a2,R.drawable.a24,R.drawable.a38,R.drawable.a58,R.drawable.a71,R.drawable.a9,R.drawable.a20,R.drawable.a0,R.drawable.a60,R.drawable.a73,R.drawable.a4,R.drawable.a30,R.drawable.a37,R.drawable.a48,R.drawable.a72,R.drawable.a12,R.drawable.a16,R.drawable.a32,R.drawable.a56,R.drawable.a66),
+                NumberCard75(R.drawable.a4,R.drawable.a29,R.drawable.a38,R.drawable.a57,R.drawable.a66,R.drawable.a14,R.drawable.a26,R.drawable.a45,R.drawable.a58,R.drawable.a73,R.drawable.a10,R.drawable.a17,R.drawable.a0,R.drawable.a53,R.drawable.a61,R.drawable.a11,R.drawable.a25,R.drawable.a34,R.drawable.a56,R.drawable.a67,R.drawable.a13,R.drawable.a23,R.drawable.a42,R.drawable.a51,R.drawable.a75),
+                NumberCard75(R.drawable.a6,R.drawable.a29,R.drawable.a43,R.drawable.a57,R.drawable.a71,R.drawable.a12,R.drawable.a19,R.drawable.a44,R.drawable.a60,R.drawable.a72,R.drawable.a2,R.drawable.a24,R.drawable.a0,R.drawable.a47,R.drawable.a64,R.drawable.a5,R.drawable.a30,R.drawable.a37,R.drawable.a58,R.drawable.a75,R.drawable.a14,R.drawable.a28,R.drawable.a42,R.drawable.a56,R.drawable.a62))
+        }
 
         fun didClickNumberCards(clickIsTrue: Boolean, image: ImageView): Boolean {
             return if (clickIsTrue) {
@@ -190,6 +198,13 @@ class Utils {
 
         fun toast(context: Context, message: String) {
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        }
+
+        fun shareApp(message:String, activity: Activity){
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            activity.startActivity(intent)
         }
     }
 }

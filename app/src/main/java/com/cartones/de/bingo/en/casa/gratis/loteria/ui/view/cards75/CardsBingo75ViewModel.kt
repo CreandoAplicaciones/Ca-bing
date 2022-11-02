@@ -1,8 +1,9 @@
-package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards
+package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards75
 
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.content.Context.MODE_APPEND
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import android.media.MediaPlayer
@@ -11,11 +12,10 @@ import com.cartones.de.bingo.en.casa.gratis.loteria.R
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseViewModel
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.*
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.save.Prefs
-import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard75
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.ticker
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import java.util.*
@@ -23,14 +23,14 @@ import kotlin.concurrent.schedule
 
 
 
-class CardsBingoViewModel: BaseViewModel() {
+class CardsBingo75ViewModel: BaseViewModel() {
 
     sealed class Event {
         object SetUp: Event()
         object GoToBack: Event()
         object ShowDialogRate: Event()
-        data class ShowDialogCheck(val listNumbersComeOut: List<Int>): Event()
-        data class ShowCards(val numberCards: List<NumberCard>): Event()
+        //data class ShowDialogCheck(val listNumbersComeOut: List<Int>): Event()
+        data class ShowCards(val numberCards: List<NumberCard75>): Event()
         data class ShowNumber(val numberRandom: String): Event()
         data class ShowLoading(val isVisibility: Boolean): Event()
         data class ShowPlayButton(val isVisibility: Boolean): Event()
@@ -51,7 +51,7 @@ class CardsBingoViewModel: BaseViewModel() {
     private var speed = 3000L
     private var speedNumber = 3
     private lateinit var mediaPlayer: MediaPlayer
-    private var listNumber: MutableList<NumberCard> = mutableListOf()
+    private var listNumber: MutableList<NumberCard75> = mutableListOf()
     private var listNumberComeOut: MutableList<Int> = mutableListOf()
     private var numberRate = 8L
     private var dialogRate = false
@@ -61,14 +61,14 @@ class CardsBingoViewModel: BaseViewModel() {
 
 
     //region ViewModel Input
-    fun initFlow(activity: Activity, context: Context, numberCard: NumberCard) {
+    fun initFlow(activity: Activity, context: Context, numberCard75: NumberCard75) {
         this.context = context
         sharedPref = activity.getPreferences(MODE_PRIVATE)
-        sharedPref2 = context.getSharedPreferences(SHARED_NAME, 0)
-        listNumber = Prefs.getList(sharedPref).toMutableList()
-        listNumber.add(numberCard)
+        sharedPref2 = context.getSharedPreferences(SHARED_NAME,0)
+        listNumber = Prefs.getList75(sharedPref).toMutableList()
+        listNumber.add(numberCard75)
         doAction(Event.ShowCards(listNumber))
-        Prefs.saveLists(sharedPref, mutableListOf())
+        Prefs.saveLists75(sharedPref, mutableListOf())
         getListNumberRandom()
         getRateIsTrue()
         numberRate = Prefs.getClickRate(sharedPref2)
@@ -177,7 +177,7 @@ class CardsBingoViewModel: BaseViewModel() {
     }
 
     private fun saveListNumber() {
-        Prefs.saveLists(sharedPref, listNumber)
+        Prefs.saveLists75(sharedPref, listNumber)
         goToBack()
     }
 
@@ -194,7 +194,7 @@ class CardsBingoViewModel: BaseViewModel() {
     }
 
     fun didOnClickCheck() {
-        doAction(Event.ShowDialogCheck(listNumberComeOut))
+        //doAction(Event.ShowDialogCheck(listNumberComeOut))
         pauseAudio()
     }
 

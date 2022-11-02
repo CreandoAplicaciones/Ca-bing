@@ -14,7 +14,7 @@ import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
 import java.util.*
 
 
-class DialogFragmentCheck(val listNumbers: List<Int>): DialogFragment() {
+class DialogFragmentCheck(var listener: OnClickListener, val listNumbers: List<Int>): DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.dialog_fragment_check_number, container, false)
@@ -25,7 +25,10 @@ class DialogFragmentCheck(val listNumbers: List<Int>): DialogFragment() {
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        dialog?.findViewById<ImageView>(R.id.imageClose)?.setOnClickListener { dismiss() }
+        dialog?.findViewById<ImageView>(R.id.imageClose)?.setOnClickListener {
+            dismiss()
+            listener.close()
+        }
         for (i in listNumbers.indices){
             when(listNumbers[i]){
                 1-> dialog?.findViewById<ImageView>(R.id.image1)?.background = dialog?.context?.resources?.getDrawable(R.drawable.selected)
@@ -125,5 +128,6 @@ class DialogFragmentCheck(val listNumbers: List<Int>): DialogFragment() {
 
 
     interface OnClickListener{
+        fun close()
     }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/cardsListFragment">
+    app:startDestination="@id/cardsList75Fragment">
     <fragment
         android:id="@+id/cardsListFragment"
         android:name="com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list.CardsListFragment"
@@ -22,4 +22,25 @@
         android:name="numberCard"
         app:argType="com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard" />
     </fragment>
+
+    <fragment
+        android:id="@+id/cardsList75Fragment"
+        android:name="com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.list75.CardsList75Fragment"
+        android:label="CardsList75Fragment"
+        tools:layout="@layout/fragment_cards_list_75">
+        <action
+            android:id="@+id/action_cardsList75Fragment_to_cardsBingo75Fragment"
+            app:destination="@id/cardsBingo75Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardsBingo75Fragment"
+        android:name="com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards75.CardsBingo75Fragment"
+        android:label="CardsBingo75Fragment"
+        tools:layout="@layout/fragment_cards_bingo75">
+        <argument
+            android:name="numberCard75"
+            app:argType="com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard75" />
+    </fragment>
+
 </navigation>

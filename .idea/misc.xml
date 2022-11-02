@@ -14,6 +14,7 @@
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/drawable/outside_line.xml" value="0.1" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/drawable/selected.xml" value="0.1" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/drawable/selected_dot.xml" value="0.1055" />
+        <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/drawable/share.xml" value="0.1" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/drawable/small_outside_line.xml" value="0.1" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/drawable/tab_selector.xml" value="0.1" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/font/jura_bold.xml" value="0.1" />
@@ -21,10 +22,15 @@
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/activity_splash.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/activity_tutorial.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/dialog_fragment_check_number.xml" value="0.22" />
+        <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/dialog_fragment_check_number75.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/dialog_rate_app.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/fragment_cards_bingo.xml" value="0.3055555555555556" />
+        <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/fragment_cards_bingo75.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/fragment_cards_list.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/fragment_cards_list_75.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/fragment_tutorial.xml" value="0.1527777777777778" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/item_card.xml" value="0.15349887133182843" />
+        <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/item_card_75.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/layout/item_cards.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1055" />
         <entry key="..\:/Users/pedro/Documents/hola que hay/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1055" />
