@@ -20,7 +20,7 @@ import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards75.CardsBingo75
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards.DialogRateApp
 
 
-class CardsBingo75Fragment : BaseFragment(), DialogRateApp.OnClickListener{
+class CardsBingo75Fragment : BaseFragment(), DialogFragment75Check.OnClickListener,DialogRateApp.OnClickListener{
 
     private val viewModel: CardsBingo75ViewModel by viewModels()
     private lateinit var binding: FragmentCardsBingo75Binding
@@ -56,7 +56,7 @@ class CardsBingo75Fragment : BaseFragment(), DialogRateApp.OnClickListener{
             is ShowPlayButton -> binding.imagePLay.isVisible = model.isVisibility
             is ChangeSpeedNumber -> binding.textNumberSpeed.text = model.speedNumber
             is GoToBack -> findNavController().popBackStack()
-            //is ShowDialogCheck -> DialogFragmentCheck75(this, model.listNumbersComeOut).show(parentFragmentManager, null)
+            is ShowDialogCheck -> DialogFragment75Check(this, model.listNumbersComeOut).show(parentFragmentManager, null)
             is ShowDialog -> alertDialog(model.title, model.message, model.firstOption, model.secondOption)
             is ShowDialogRate -> {
                 val rate = DialogRateApp(this )
@@ -77,12 +77,6 @@ class CardsBingo75Fragment : BaseFragment(), DialogRateApp.OnClickListener{
 
     }
 
- /*   override fun close() {
-        viewModel.closeDialog()
-    }
-
-  */
-
     override fun goToGooglePlay(start: Int) {
         if (start == 5 || start == 4) {
             val uri = Uri.parse(GOOGLE_PLAY)
@@ -91,6 +85,10 @@ class CardsBingo75Fragment : BaseFragment(), DialogRateApp.OnClickListener{
         } else {
             Utils.toast(requireContext(), getString(R.string.dialog_rate_thank_you))
         }
+    }
+
+    override fun close() {
+        viewModel.closeDialog()
     }
 
 }

@@ -29,7 +29,7 @@ class CardsBingo75ViewModel: BaseViewModel() {
         object SetUp: Event()
         object GoToBack: Event()
         object ShowDialogRate: Event()
-        //data class ShowDialogCheck(val listNumbersComeOut: List<Int>): Event()
+        data class ShowDialogCheck(val listNumbersComeOut: List<Int>): Event()
         data class ShowCards(val numberCards: List<NumberCard75>): Event()
         data class ShowNumber(val numberRandom: String): Event()
         data class ShowLoading(val isVisibility: Boolean): Event()
@@ -194,7 +194,7 @@ class CardsBingo75ViewModel: BaseViewModel() {
     }
 
     fun didOnClickCheck() {
-        //doAction(Event.ShowDialogCheck(listNumberComeOut))
+        doAction(Event.ShowDialogCheck(listNumberComeOut))
         pauseAudio()
     }
 

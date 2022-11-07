@@ -27,5 +27,8 @@
     <string name="dialog_rate_thank_you">Gracias por votar</string>
 
     <string name="main_share">Descarga esta app %1$s y juega conmigo al Bingo</string>
+    <string name="selection_90">Jugar al bingo 90</string>
+    <string name="selection_75">Jugar al bingo 75</string>
+    <string name="selection_tutorial">Ver tutorial</string>
 
 </resources>
