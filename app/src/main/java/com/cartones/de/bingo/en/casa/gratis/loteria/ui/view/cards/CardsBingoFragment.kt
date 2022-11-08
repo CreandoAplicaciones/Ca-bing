@@ -49,7 +49,9 @@ class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, 
                 binding.imageCheck.setOnClickListener { viewModel.didOnClickCheck() }
             }
             is ShowCards -> binding.rVCards.adapter = CardsAdapter (model.numberCards)
-            is ShowNumber -> binding.txtNumber.text = model.numberRandom
+            is ShowNumber1 -> binding.txtNumber1.text = model.number
+            is ShowNumber2 -> binding.txtNumber2.text = model.number
+            is ShowNumber3 -> binding.txtNumber3.text = model.number
             is ShowLoading -> binding.progressBar.isVisible = model.isVisibility
             is ShowPauseButton -> binding.imagePause.isVisible = model.isVisibility
             is ShowPlayButton -> binding.imagePLay.isVisible = model.isVisibility
@@ -61,6 +63,7 @@ class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, 
                 val rate = DialogRateApp(this )
                 rate.show(parentFragmentManager, null)
             }
+            is ShowToast -> Utils.toast(requireContext(), getString(model.resInt))
         }
 
     }

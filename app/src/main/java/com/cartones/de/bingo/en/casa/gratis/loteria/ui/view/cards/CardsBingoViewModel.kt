@@ -12,6 +12,7 @@ import com.cartones.de.bingo.en.casa.gratis.loteria.ui.base.BaseViewModel
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.*
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.save.Prefs
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.domains.models.NumberCard
+import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards75.CardsBingo75ViewModel
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.channels.Channel
@@ -31,11 +32,14 @@ class CardsBingoViewModel: BaseViewModel() {
         object ShowDialogRate: Event()
         data class ShowDialogCheck(val listNumbersComeOut: List<Int>): Event()
         data class ShowCards(val numberCards: List<NumberCard>): Event()
-        data class ShowNumber(val numberRandom: String): Event()
+        data class ShowNumber1(val number: String): Event()
+        data class ShowNumber2(val number: String): Event()
+        data class ShowNumber3(val number: String): Event()
         data class ShowLoading(val isVisibility: Boolean): Event()
         data class ShowPlayButton(val isVisibility: Boolean): Event()
         data class ShowPauseButton(val isVisibility: Boolean): Event()
         data class ChangeSpeedNumber(val speedNumber: String): Event()
+        data class ShowToast(val resInt: Int): Event()
         data class ShowDialog(val title: Int, val message: Int, val firstOption: Int, val secondOption: Int): Event()
     }
     private val eventChannel = Channel<Event>(Channel.BUFFERED)
@@ -112,6 +116,11 @@ class CardsBingoViewModel: BaseViewModel() {
     }
 
     fun didOnClickPlay() {
+        if (numberOfTheList == 0) {
+            playAudio(R.raw.good_luck)
+        } else {
+            playAudio(R.raw.continue_game)
+        }
         clickPlay = true
         playNumber()
         doAction(Event.ShowPauseButton(true))
@@ -119,6 +128,7 @@ class CardsBingoViewModel: BaseViewModel() {
     }
 
     fun didOnClickPause() {
+        playAudio(R.raw.paused_game)
         pauseAudio()
     }
 
@@ -127,7 +137,13 @@ class CardsBingoViewModel: BaseViewModel() {
             if (clickPlay) {
                 playAudio(Utils.checkAudio(listNumbersRandom[numberOfTheList]))
                 listNumberComeOut.add(listNumbersRandom[numberOfTheList])
-                doAction(Event.ShowNumber(listNumbersRandom[numberOfTheList].toString()))
+                doAction(Event.ShowNumber1(listNumbersRandom[numberOfTheList].toString()))
+                if (numberOfTheList > 0) {
+                    doAction(Event.ShowNumber2(listNumbersRandom[numberOfTheList - 1].toString()))
+                }
+                if (numberOfTheList > 1) {
+                    doAction(Event.ShowNumber3(listNumbersRandom[numberOfTheList - 2].toString()))
+                }
                 checkIfContinueCounting()
             }
         }
@@ -168,12 +184,19 @@ class CardsBingoViewModel: BaseViewModel() {
         clickPlay = false
         doAction(Event.ShowPauseButton(false))
         doAction(Event.ShowPlayButton(true))
-        doAction(Event.ShowNumber(""))
     }
 
     fun didOnClickCardsMore() {
-        doAction(Event.ShowDialog(R.string.bingo, R.string.do_you_want_more_cards, R.string.yes, R.string.no))
+        checkHawManyCartonsThereAre()
         pauseAudio()
+    }
+
+    private fun checkHawManyCartonsThereAre() {
+        if (listNumber.size <= 6) {
+            doAction(Event.ShowDialog(R.string.bingo, R.string.do_you_want_more_cards, R.string.yes, R.string.no))
+        } else {
+            doAction(Event.ShowToast(R.string.cards_bingo_you_cant_have_more_7))
+        }
     }
 
     private fun saveListNumber() {
@@ -187,6 +210,9 @@ class CardsBingoViewModel: BaseViewModel() {
 
     fun checkIfNewPlayOrMoreCards(message: Int) {
         if (message == R.string.do_you_want_play_again) {
+            doAction(Event.ShowNumber1(""))
+            doAction(Event.ShowNumber2(""))
+            doAction(Event.ShowNumber3(""))
             getListNumberRandom()
         } else {
             saveListNumber()

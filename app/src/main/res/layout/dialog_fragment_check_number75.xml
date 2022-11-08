@@ -306,7 +306,7 @@
                 android:layout_height="0dp"
                 android:background="@drawable/small_outside_line"
                 android:gravity="center"
-                android:src="@drawable/a18"
+                android:src="@drawable/a19"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/image34"
                 app:layout_constraintStart_toEndOf="@id/image4"

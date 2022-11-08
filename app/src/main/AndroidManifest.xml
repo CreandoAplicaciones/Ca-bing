@@ -34,10 +34,10 @@
             android:exported="true"/>
 
         <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
-        <!-- real:-->
+        <!-- real: ca-app-pub-4849545913451935~5095906901-->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-4849545913451935~5095906901"/>
     </application>
 
 </manifest>

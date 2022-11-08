@@ -40,7 +40,7 @@ class TutorialFragment : BaseFragment() {
         super.onCreate(savedInstanceState)
         sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE)
         viewModel = ViewModelProvider(this)[TutorialViewModel::class.java].apply {
-            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 4)
+            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 5)
         }
     }
 

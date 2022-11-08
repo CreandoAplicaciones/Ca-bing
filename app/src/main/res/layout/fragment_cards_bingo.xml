@@ -103,37 +103,20 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/constraintlayoutSpeed">
 
-                <TextView
-                    android:id="@+id/txtball"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bola"
-                    android:fontFamily="@font/robotomedium"
-                    android:textSize="22dp"
-                    android:textAllCaps="true"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:layout_marginEnd="10dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/viewBall"
-                    app:layout_constraintStart_toStartOf="parent"
-                    />
-
                 <ImageView
-                    android:id="@+id/viewBall"
+                    android:id="@+id/viewBall1"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:src="@drawable/ball"
                     android:background="@drawable/ball_color"
-                    app:layout_constraintTop_toTopOf="@id/txtNumber"
-                    app:layout_constraintBottom_toBottomOf="@id/txtNumber"
-                    app:layout_constraintStart_toStartOf="@id/txtNumber"
-                    app:layout_constraintEnd_toEndOf="@id/txtNumber"
+                    app:layout_constraintTop_toTopOf="@id/txtNumber1"
+                    app:layout_constraintBottom_toBottomOf="@id/txtNumber1"
+                    app:layout_constraintStart_toStartOf="@id/txtNumber1"
+                    app:layout_constraintEnd_toEndOf="@id/txtNumber1"
                     />
 
                 <TextView
-                    android:id="@+id/txtNumber"
+                    android:id="@+id/txtNumber1"
                     android:layout_width="0dp"
                     android:layout_height="75dp"
                     app:layout_constraintDimensionRatio="1:1"
@@ -141,12 +124,72 @@
                     android:gravity="center"
                     android:textStyle="bold"
                     android:paddingBottom="2dp"
-                    android:textSize="49dp"
+                    android:textSize="47dp"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/txtNumber2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/viewBall2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ball"
+                    android:background="@drawable/ball_color"
+                    app:layout_constraintTop_toTopOf="@id/txtNumber2"
+                    app:layout_constraintBottom_toBottomOf="@id/txtNumber2"
+                    app:layout_constraintStart_toStartOf="@id/txtNumber2"
+                    app:layout_constraintEnd_toEndOf="@id/txtNumber2"
+                    />
+
+                <TextView
+                    android:id="@+id/txtNumber2"
+                    android:layout_width="0dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    tools:text="90"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:paddingBottom="2dp"
+                    android:textSize="47dp"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/txtNumber3"
+                    app:layout_constraintStart_toEndOf="@id/txtNumber1"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/viewBall3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ball"
+                    android:background="@drawable/ball_color"
+                    app:layout_constraintTop_toTopOf="@id/txtNumber3"
+                    app:layout_constraintBottom_toBottomOf="@id/txtNumber3"
+                    app:layout_constraintStart_toStartOf="@id/txtNumber3"
+                    app:layout_constraintEnd_toEndOf="@id/txtNumber3"
+                    />
+
+                <TextView
+                    android:id="@+id/txtNumber3"
+                    android:layout_width="0dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    tools:text="90"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:paddingBottom="2dp"
+                    android:textSize="47dp"
                     android:textColor="@color/black"
                     android:layout_margin="5dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/txtNumber2"
                     app:layout_constraintBottom_toBottomOf="parent"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

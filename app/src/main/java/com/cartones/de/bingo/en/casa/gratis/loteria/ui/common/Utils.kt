@@ -88,6 +88,12 @@ class Utils {
             return random
         }
 
+        fun getNumberRandom75(): List<Int> {
+            val random = List(9000) { Random.nextInt(1..75) }
+                .distinct()
+            return random
+        }
+
         fun speed(speedNumber: Int):Long {
             return when(speedNumber) {
                 0 -> 5400L
@@ -195,6 +201,19 @@ class Utils {
                 else -> {R.raw.uno}
             }
         }
+
+
+        fun checkAudioLetter(number: Int): Int{
+            return when (number) {
+                in 1..15 -> R.raw.b
+                in 16..30 -> R.raw.i
+                in 31..45 -> R.raw.n
+                in 46..60 -> R.raw.g
+                in 61..75 -> R.raw.o
+                else -> R.raw.b
+            }
+        }
+
 
         fun toast(context: Context, message: String) {
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show()

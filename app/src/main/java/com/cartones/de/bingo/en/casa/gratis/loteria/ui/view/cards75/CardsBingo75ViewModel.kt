@@ -3,7 +3,6 @@ package com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards75
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
-import android.content.Context.MODE_APPEND
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import android.media.MediaPlayer
@@ -31,11 +30,14 @@ class CardsBingo75ViewModel: BaseViewModel() {
         object ShowDialogRate: Event()
         data class ShowDialogCheck(val listNumbersComeOut: List<Int>): Event()
         data class ShowCards(val numberCards: List<NumberCard75>): Event()
-        data class ShowNumber(val numberRandom: String): Event()
+        data class ShowNumber1(val number: String): Event()
+        data class ShowNumber2(val number: String): Event()
+        data class ShowNumber3(val number: String): Event()
         data class ShowLoading(val isVisibility: Boolean): Event()
         data class ShowPlayButton(val isVisibility: Boolean): Event()
         data class ShowPauseButton(val isVisibility: Boolean): Event()
         data class ChangeSpeedNumber(val speedNumber: String): Event()
+        data class ShowToast(val resInt: Int): Event()
         data class ShowDialog(val title: Int, val message: Int, val firstOption: Int, val secondOption: Int): Event()
     }
     private val eventChannel = Channel<Event>(Channel.BUFFERED)
@@ -93,7 +95,7 @@ class CardsBingo75ViewModel: BaseViewModel() {
     private fun getListNumberRandom() {
         numberOfTheList = 0
         doAction(Event.ShowLoading(true))
-        listNumbersRandom = Utils.getNumberRandom()
+        listNumbersRandom = Utils.getNumberRandom75()
         Prefs.saveFirstNumberList(sharedPref, listNumbersRandom[0])
         checkIfOtherList()
     }
@@ -112,6 +114,11 @@ class CardsBingo75ViewModel: BaseViewModel() {
     }
 
     fun didOnClickPlay() {
+        if (numberOfTheList == 0) {
+            playAudio(R.raw.good_luck)
+        } else {
+            playAudio(R.raw.continue_game)
+        }
         clickPlay = true
         playNumber()
         doAction(Event.ShowPauseButton(true))
@@ -119,16 +126,26 @@ class CardsBingo75ViewModel: BaseViewModel() {
     }
 
     fun didOnClickPause() {
+        playAudio(R.raw.paused_game)
         pauseAudio()
     }
 
     private fun playNumber() {
         Timer().schedule(speed) {
             if (clickPlay) {
+                playAudio(Utils.checkAudioLetter(listNumbersRandom[numberOfTheList]))
+                Timer().schedule(500L) {
                 playAudio(Utils.checkAudio(listNumbersRandom[numberOfTheList]))
                 listNumberComeOut.add(listNumbersRandom[numberOfTheList])
-                doAction(Event.ShowNumber(listNumbersRandom[numberOfTheList].toString()))
+                doAction(Event.ShowNumber1(listNumbersRandom[numberOfTheList].toString()))
+                if (numberOfTheList > 0) {
+                    doAction(Event.ShowNumber2(listNumbersRandom[numberOfTheList - 1].toString()))
+                }
+                if (numberOfTheList > 1) {
+                    doAction(Event.ShowNumber3(listNumbersRandom[numberOfTheList - 2].toString()))
+                }
                 checkIfContinueCounting()
+                }
             }
         }
     }
@@ -168,12 +185,18 @@ class CardsBingo75ViewModel: BaseViewModel() {
         clickPlay = false
         doAction(Event.ShowPauseButton(false))
         doAction(Event.ShowPlayButton(true))
-        doAction(Event.ShowNumber(""))
     }
 
     fun didOnClickCardsMore() {
-        doAction(Event.ShowDialog(R.string.bingo, R.string.do_you_want_more_cards, R.string.yes, R.string.no))
+        checkHawManyCartonsThereAre()
         pauseAudio()
+    }
+    private fun checkHawManyCartonsThereAre() {
+        if (listNumber.size <= 5) {
+            doAction(Event.ShowDialog(R.string.bingo, R.string.do_you_want_more_cards, R.string.yes, R.string.no))
+        } else {
+            doAction(Event.ShowToast(R.string.cards_bingo_you_cant_have_more_6))
+        }
     }
 
     private fun saveListNumber() {
@@ -187,6 +210,9 @@ class CardsBingo75ViewModel: BaseViewModel() {
 
     fun checkIfNewPlayOrMoreCards(message: Int) {
         if (message == R.string.do_you_want_play_again) {
+            doAction(Event.ShowNumber1(""))
+            doAction(Event.ShowNumber2(""))
+            doAction(Event.ShowNumber3(""))
             getListNumberRandom()
         } else {
             saveListNumber()

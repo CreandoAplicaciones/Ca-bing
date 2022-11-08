@@ -18,6 +18,7 @@
     <string name="tutorial_if_you_want_changer_speed">Controla la velocidad con la que sale los números pulsando el + y el -</string>
     <string name="tutorial_if_you_want_new_play">Para empezar nueva partida pulsa aquí</string>
     <string name="tutorial_if_you_want_to_start">Para empezar pulsa aquí</string>
+    <string name="tutorial_check_number">Comprueba los números que han salido</string>
 
     //dialog rete
     <string name="dialog_rate_do_you_like_this_app">¿Te gusta la App?</string>
@@ -30,5 +31,8 @@
     <string name="selection_90">Jugar al bingo 90</string>
     <string name="selection_75">Jugar al bingo 75</string>
     <string name="selection_tutorial">Ver tutorial</string>
+
+    <string name="cards_bingo_you_cant_have_more_7">No puedes tener más de 7 cartones</string>
+    <string name="cards_bingo_you_cant_have_more_6">No puedes tener más de 6 cartones</string>
 
 </resources>

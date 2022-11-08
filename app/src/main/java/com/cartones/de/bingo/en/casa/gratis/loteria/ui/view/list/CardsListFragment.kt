@@ -47,9 +47,11 @@ class CardsListFragment : BaseFragment() {
                     { numberCard -> viewModel.onExerciseClicked(numberCard)},
                     model.numberCards)
             }
+            //prueba ca-app-pub-3940256099942544/1033173712
+            // real ca-app-pub-4849545913451935/3962788631
             is InitialInterstitial -> {
                 MobileAds.initialize(requireContext()) {}
-                InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+                InterstitialAd.load(requireContext(),"ca-app-pub-4849545913451935/3962788631", adRequest, object : InterstitialAdLoadCallback() {
                     override fun onAdFailedToLoad(adError: LoadAdError) {
                         mInterstitialAd = null
                     }
