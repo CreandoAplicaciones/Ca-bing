@@ -50,7 +50,14 @@ class Prefs {
         }
 
         fun getFirstNumberList(sharedPref: SharedPreferences): Int {
-            return sharedPref.getInt(FIRST_NUMBER_LIST, 0)
+            return sharedPref.getInt(FIRST_NUMBER_LIST, 1)
+        }
+        fun saveFirstNumberList75(sharedPref: SharedPreferences, number: Int) {
+            sharedPref.edit().putInt(FIRST_NUMBER_LIST_75, number).apply()
+        }
+
+        fun getFirstNumberList75(sharedPref: SharedPreferences): Int {
+            return sharedPref.getInt(FIRST_NUMBER_LIST_75, 1)
         }
 
         fun saveFirstDay(sharedPref: SharedPreferences, isFirstDay: Boolean) {

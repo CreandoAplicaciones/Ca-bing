@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -19,13 +20,18 @@ import com.cartones.de.bingo.en.casa.gratis.loteria.ui.common.extension.observe
 import com.cartones.de.bingo.en.casa.gratis.loteria.ui.view.cards.CardsBingoViewModel.Event.*
 
 
-class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, DialogRateApp.OnClickListener{
+class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener,
+    DialogRateApp.OnClickListener {
 
     private val viewModel: CardsBingoViewModel by viewModels()
     private lateinit var binding: FragmentCardsBingoBinding
     private val args: CardsBingoFragmentArgs by navArgs()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentCardsBingoBinding.inflate(inflater)
         return binding.root
     }
@@ -33,8 +39,9 @@ class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         super.init(viewModel)
-            viewModel.initFlow(requireActivity(), requireContext(), args.numberCard)
-            viewModel.eventsFlow.observe(viewLifecycleOwner, ::updateUi)
+        activity?.let { activity -> activity.window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) }
+        viewModel.initFlow(requireActivity(), requireContext(), args.numberCard)
+        viewModel.eventsFlow.observe(viewLifecycleOwner, ::updateUi)
     }
 
     private fun updateUi(model: CardsBingoViewModel.Event) {
@@ -48,7 +55,7 @@ class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, 
                 binding.imageMoreCards.setOnClickListener { viewModel.didOnClickCardsMore() }
                 binding.imageCheck.setOnClickListener { viewModel.didOnClickCheck() }
             }
-            is ShowCards -> binding.rVCards.adapter = CardsAdapter (model.numberCards)
+            is ShowCards -> binding.rVCards.adapter = CardsAdapter(model.numberCards)
             is ShowNumber1 -> binding.txtNumber1.text = model.number
             is ShowNumber2 -> binding.txtNumber2.text = model.number
             is ShowNumber3 -> binding.txtNumber3.text = model.number
@@ -57,25 +64,35 @@ class CardsBingoFragment : BaseFragment(), DialogFragmentCheck.OnClickListener, 
             is ShowPlayButton -> binding.imagePLay.isVisible = model.isVisibility
             is ChangeSpeedNumber -> binding.textNumberSpeed.text = model.speedNumber
             is GoToBack -> findNavController().popBackStack()
-            is ShowDialogCheck -> DialogFragmentCheck(this, model.listNumbersComeOut).show(parentFragmentManager, null)
-            is ShowDialog -> alertDialog(model.title, model.message, model.firstOption, model.secondOption)
+            is ShowDialogCheck -> DialogFragmentCheck(this, model.listNumbersComeOut).show(
+                parentFragmentManager,
+                null
+            )
+            is ShowDialog -> alertDialog(
+                model.title,
+                model.message,
+                model.firstOption,
+                model.secondOption
+            )
             is ShowDialogRate -> {
-                val rate = DialogRateApp(this )
+                val rate = DialogRateApp(this)
                 rate.show(parentFragmentManager, null)
             }
             is ShowToast -> Utils.toast(requireContext(), getString(model.resInt))
         }
 
     }
-   private fun alertDialog(title: Int, message: Int, firstOption:  Int, secondOption: Int) {
-       androidx.appcompat.app.AlertDialog.Builder(requireContext())
-           .setTitle(title)
-           .setMessage(message)
-           .setPositiveButton(firstOption) { _, _ ->
-               viewModel.checkIfNewPlayOrMoreCards(message)}
-           .setNegativeButton(secondOption) { _, _ ->
-           }
-           .show()
+
+    private fun alertDialog(title: Int, message: Int, firstOption: Int, secondOption: Int) {
+        androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(firstOption) { _, _ ->
+                viewModel.checkIfNewPlayOrMoreCards(message)
+            }
+            .setNegativeButton(secondOption) { _, _ ->
+            }
+            .show()
 
     }
 

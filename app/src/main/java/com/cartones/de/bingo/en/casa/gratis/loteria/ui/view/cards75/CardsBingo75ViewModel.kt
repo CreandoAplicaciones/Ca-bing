@@ -96,12 +96,12 @@ class CardsBingo75ViewModel: BaseViewModel() {
         numberOfTheList = 0
         doAction(Event.ShowLoading(true))
         listNumbersRandom = Utils.getNumberRandom75()
-        Prefs.saveFirstNumberList(sharedPref, listNumbersRandom[0])
         checkIfOtherList()
     }
     private fun checkIfOtherList() {
-        if (listNumbersRandom[0] == Prefs.getFirstNumberList(sharedPref)) {
+        if (listNumbersRandom[0] == Prefs.getFirstNumberList75(sharedPref2)) {
             listNumbersRandom = Utils.getNumberRandom()
+            Prefs.saveFirstNumberList75(sharedPref2, listNumbersRandom[0])
             doAction(Event.ShowLoading(false))
             doAction(Event.SetUp)
         } else {

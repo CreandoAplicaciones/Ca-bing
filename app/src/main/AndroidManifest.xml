@@ -4,6 +4,8 @@
     package="com.cartones.de.bingo.en.casa.gratis.loteria">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
